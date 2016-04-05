@@ -3,6 +3,12 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 	//document.addEventListener("resume", onResume, false);
 	
+		$(document).on("touchend", "#btncarrello", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+	
 
 	// Workaround for buggy header/footer fixed position when virtual keyboard is on/off
 	$('input, select')

@@ -3,6 +3,63 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
 	
+	$(document).on("touchend", "#menuR", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "menu.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#badde4", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#programas", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "index.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#altro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			//$("#mypanelH").panel("open");
+			$("#btnpanel").click();
+		});
+		
+							
+		$(document).on("touchend", "#premi", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "premi.html";
+		});
+		
+		$(document).on("touchend", "#notifiche", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "Notifiche.html";
+		});
+		
+		$(document).on("touchend", "#ordini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			goprofilo()
+		});
+		
+		$(document).on("touchend", "#radio", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gomappa()
+		});
+		
+		$(document).on("touchend", "#termini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "TerminiCondizioni.html";
+		});
+		
+		$(document).on("touchend", "#recensioni", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "rating.html";
+			//initscroll()
+		});
+		
+	
 	
 	$('#OraConsegna').focus(function(){
 		myScroll.scrollToElement("#OraConsegna", "1s");

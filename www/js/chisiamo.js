@@ -19,6 +19,13 @@ function onDeviceReady() {
 							  last_click_time = click_time;
 							  
 							  }, true);
+							  
+		$(document).on("touchend", "#ritorna", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+	
 
 	$('input, select')
 	.on('focus', function (e) {

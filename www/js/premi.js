@@ -21,6 +21,12 @@ function onDeviceReady() {
 							  
 							  }, true);
 
+		$(document).on("touchend", "#btncarrello", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
 	
