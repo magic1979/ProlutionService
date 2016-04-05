@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-		id        = "it.app-piu.prolutionlight"
-		versionCode="1.0"
-		version   = "1.0">
-		<name>Prolution Light</name>
-		<description>Prolution Light App+</description>
+		id        = "it.app-piu.fratelli"
+		versionCode="2.0"
+		version   = "2.0">
+		<name>FratelliApp+</name>
+		<description>Fratelli di Pizza App+, Pizza, Pizza a legna</description>
 		<author href="http://www.app-piu.it" email="info@app-piu.it">
-			Prolution srl
+Prolution srl
 		</author>
 		<preference name="phonegap-version" value="cli-5.2.0" />
 		<preference name="orientation" value="portrait" />
@@ -110,6 +110,4 @@
 
 		<gap:plugin name="de.appplant.cordova.plugin.email-composer" spec="0.8.2" source="pgb" />
 		<gap:plugin name="pushbots-cordova-plugin" source="npm" version="1.2.8" />
-		<gap:plugin name="com.sharinglabs.cordova.plugin.datepicker" spec="1.1.3" source="pgb"/>
-		
 	</widget>
