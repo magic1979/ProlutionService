@@ -55,8 +55,8 @@ var app = {
 		
 		$(document).on("touchend", "#altro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "#mypanelH";
-			rati()
+			//$("#mypanelH").panel("open");
+			$("#btnpanel").click();
 		});
 		
 							
