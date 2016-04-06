@@ -2,6 +2,30 @@
 
 <html>
     <head>
+		<!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+-->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
+
+	<!-- Allow everything but only from the same origin and foo.com -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' foo.com">
+
+	<!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that 
+		* CSS only from the same origin and inline styles,
+		* scripts only from the same origin and inline styles, and eval()
+	-->
+	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+	<!-- Allows XHRs only over HTTPS on the same domain. -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
+
+	<!-- Allow iframe to https://cordova.apache.org/ -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://cordova.apache.org">
+	
 		<meta property="og:locale" content="en_US" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			
@@ -593,13 +617,13 @@ a {text-decoration:none;}
 					<img src="img/LogoFood.png" height="60px"><br><font class="fontsforweb_fontid_2802" color="#1d96d3" size="3">Fratelli Di Pizza</font>
 						<br><font color="#000000" size="2">Via di Saponara 195, Roma</font><br><br>
 						<ul data-role="listview" data-inset="true">
-							<li><a href="premi.html" rel="external">Card e Premi</a></li>
-							<li><a href="Notifiche.html" rel="external">Notifiche</a></li>
-							<li><a href="javascript:goprofilo()" rel="external">I Miei Ordini</a></li>
+							<li><a id="premi" href="#" rel="external">Card e Premi</a></li>
+							<li><a id="notifiche" href="#" rel="external">Notifiche</a></li>
+							<li><a id="ordini" href="#" rel="external">I Miei Ordini</a></li>
 							<!--<li><a id="radio" href="chisiamo.html" rel="external">Chi Siamo</a></li>-->
-							<li><a id="radio" href="javascript:gomappa()" rel="external">Dove Siamo</a></li>
+							<li><a id="radio" href="#" rel="external">Dove Siamo</a></li>
 							<li><a href="tel:+393478253732">Contattaci</a></li>
-							<li><a href="TerminiCondizioni.html" rel="external">Termini e Condizioni</a></li>
+							<li><a id="termini" href="#" rel="external">Termini e Condizioni</a></li>
 						</ul>
 				</center>
 				<br>
