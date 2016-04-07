@@ -5,6 +5,12 @@ var app = {
 
     onDeviceReady: function() {
         app.amendLinks('external-link');
+		
+		IDPage = getParameterByName('id');
+		
+		if (IDPage<>""){
+			alert(IDPage)
+		}
     },
 
     // Find everything with class className and open it
@@ -23,3 +29,14 @@ var app = {
 };
 
 app.initialize();
+
+function ciccio(){
+	alert(1);
+}
+
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+						  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+						  results = regex.exec(location.search);
+						  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+						  }
