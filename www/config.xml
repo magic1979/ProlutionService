@@ -29,8 +29,8 @@ Prolution srl
 		<preference name="KeyboardDisplayRequiresUserAction" value="true" />
 		<preference name="HideKeyboardFormAccessoryBar" value="true" />
 		<preference name="SuppressesIncrementalRendering" value="true" />
-		<preference name="android-minSdkVersion" value="14" />
-		<preference name="android-targetSdkVersion" value="19" />
+		<preference name="android-minSdkVersion" value="11" />
+		<preference name="android-targetSdkVersion" value="21" />
 		<preference name="android-installLocation" value="auto" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="ErrorUrl" value="http://www.app-piu.it"/>
