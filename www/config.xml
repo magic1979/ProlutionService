@@ -105,6 +105,6 @@ P.Mariola
 		<access origin="http://googleapis.com" subdomains="true"  />
 		<gap:plugin name="de.appplant.cordova.plugin.email-composer"  />
 		<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
-		<gap:plugin name="com.pushbots.push" version="1.2.4" source="plugins.cordova.io" />
+		<gap:plugin name="com.pushbots.push" version="1.2.4" source="npm" version="1.2.8" />
 
 	</widget>
