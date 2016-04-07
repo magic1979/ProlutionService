@@ -22,27 +22,6 @@ function onDeviceReady() {
 							  last_click_time = click_time;
 							  
 							  }, true);
-							  
-		$(document).on("touchend", "#accedi", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			login()
-		});
-		
-		$(document).on("touchend", "#iscriviti", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			$("#btnpanel").click();
-		});
-		
-		$(document).on("touchend", "#iscriviti2", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			iscriviti()
-		});
-		
-		$(document).on("touchend", "#accedi2", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			$("#btnpanel2").click();
-			//initscroll()
-		});
 
 		document.addEventListener("showkeyboard", function(){ $("[data-role=footer]").hide();}, false);
 		document.addEventListener("hidekeyboard", function(){ $("[data-role=footer]").show();}, false);

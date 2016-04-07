@@ -7,75 +7,19 @@ function onDeviceReady() {
 	
 	document.addEventListener('click', function (e) {
 							  
-		  click_time = e['timeStamp'];
-		  
-		  if (click_time && (click_time - last_click_time) < 1000) { e.stopImmediatePropagation();
-		  
-		  e.preventDefault();
-		  
-		  return false;
-		  
-		  }
-		  
-		  last_click_time = click_time;
-		  
-}, true);
+							  click_time = e['timeStamp'];
 							  
-	$(document).on("touchend", "#menuR", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "menu.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#badde5", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "cart.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#programas", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "index.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#altro", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			//$("#mypanelH").panel("open");
-			$("#btnpanel").click();
-		});
-		
-							
-		$(document).on("touchend", "#premi", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "premi.html";
-		});
-		
-		$(document).on("touchend", "#notifiche", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "Notifiche.html";
-		});
-		
-		$(document).on("touchend", "#ordini", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			goprofilo()
-		});
-		
-		$(document).on("touchend", "#radio", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			gomappa()
-		});
-		
-		$(document).on("touchend", "#termini", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "TerminiCondizioni.html";
-		});
-		
-		$(document).on("touchend", "#recensioni", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "rating.html";
-			//initscroll()
-		});
+							  if (click_time && (click_time - last_click_time) < 1000) { e.stopImmediatePropagation();
+							  
+							  e.preventDefault();
+							  
+							  return false;
+							  
+							  }
+							  
+							  last_click_time = click_time;
+							  
+							  }, true);
 	
     
     $.mobile.defaultPageTransition = 'none';
@@ -176,9 +120,7 @@ function buildmenu() {
 		   $.each(result, function(i,item){
 				  //alert(item.Catalogo)
 				  
-				  //tabella = tabella + "<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a id='conta"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a id='conta1"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a id='conta2"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>";
-				  
-				  tabella = tabella + "<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a href='#' id='conta"+ item.Catalogo +"' rel='external'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a href='#' id='conta1"+ item.Catalogo +"' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a href='#' id='conta2"+ item.Catalogo +"' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>";
+				  tabella = tabella + "<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a onclick='#' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a onclick='#' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a onclick='#' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>";
 				  
 				 //alert(tabella)
 			});
@@ -189,60 +131,10 @@ function buildmenu() {
 		    $("#noconn").hide();
 		   
 		   $("#menuL").html(tabella);
-		   buildtouch()
 		   
 		   myScroll.refresh();
-		   
-	   
-		   },
-		   error: function(){
-		   $(".spinner").hide();
-		   
-		   navigator.notification.alert(
-										'Possibile errore di rete, riprova tra qualche minuto 2',  // message
-										alertDismissed,         // callback
-										'Attenzione',            // title
-										'Done'                  // buttonName@
-										);
-		   
-		   },
-		   dataType:"jsonp"});
-	
-}
 
-function buildtouch() {
-	
-	$(".spinner").show();
-	$.ajax({
-		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_Menu.asp",
-		   contentType: "application/json",
-		   //data: {ID:idProdotto},
-		   timeout: 7000,
-		   jsonp: 'callback',
-		   crossDomain: true,
-		   success:function(result){
 		   
-		   $.each(result, function(i,item){
-				  
-				$(document).on("touchend", "#conta"+ item.Catalogo +"", function(e){
-					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
-				});
-				
-				$(document).on("touchend", "#conta1"+ item.Catalogo +"", function(e){
-					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
-				});
-				
-				$(document).on("touchend", "#conta2"+ item.Catalogo +"", function(e){
-					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
-				});
-					  
-			});
-		   
-			
-		    $(".spinner").hide();
-		    $("#noconn").hide();
-	   
 		   },
 		   error: function(){
 		   $(".spinner").hide();

@@ -20,62 +20,6 @@ function onDeviceReady() {
 							  last_click_time = click_time;
 							  
 							  }, true);
-							  
-	$(document).on("touchend", "#menuR", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "menu.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#badde3", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "cart.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#programas", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "index.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#altro", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			//$("#mypanelH").panel("open");
-			$("#btnpanel").click();
-		});
-		
-							
-		$(document).on("touchend", "#premi", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "premi.html";
-		});
-		
-		$(document).on("touchend", "#notifiche", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "Notifiche.html";
-		});
-		
-		$(document).on("touchend", "#ordini", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			goprofilo()
-		});
-		
-		$(document).on("touchend", "#radio", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			gomappa()
-		});
-		
-		$(document).on("touchend", "#termini", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "TerminiCondizioni.html";
-		});
-		
-		$(document).on("touchend", "#recensioni", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "rating.html";
-			//initscroll()
-		});
 
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
@@ -183,9 +127,7 @@ function buildcatalogo(Catalogo) {
 					window.location.href = "menu.html";
 				  }
 				  else{
-				  //tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='javascript:AggProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='javascript:SottProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home'></div></a></td></tr>";
-				  
-				  tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home'></div></a></td></tr>";
+				  tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a href='javascript:AggProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home1'></div></a><br><a href='javascript:SottProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home'></div></a></td></tr>";
 				  }
 				  // alert(item.ID)
 			});
@@ -196,10 +138,10 @@ function buildcatalogo(Catalogo) {
 		    $("#noconn").hide();
 		   
 		   $("#CatalogoPag").html(tabella);
-		   catalogotouch(Catalogo)
 		   
 		   myScroll.refresh();
 		   
+		   
 		   },
 		   error: function(){
 		   $(".spinner").hide();
@@ -213,61 +155,9 @@ function buildcatalogo(Catalogo) {
 		   
 		   },
 		   dataType:"jsonp"});
+	
 }
 
-function catalogotouch(Catalogo) {
-	
-	$(".spinner").show();
-	$.ajax({
-		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_Home.asp",
-		   contentType: "application/json",
-		   data: {categoria:Catalogo},
-		   timeout: 7000,
-		   jsonp: 'callback',
-		   crossDomain: true,
-		   success:function(result){
-		   
-		   $.each(result, function(i,item){
-				  
-				  if (item.ID==0){
-					window.location.href = "menu.html";
-				  }
-				  else{
-				  
-					  $.each(result, function(i,item){
-				  
-						$(document).on("touchend", "#add"+ item.Catalogo +"", function(e){
-							AggProd(item.Cod_Prodotto);
-						});
-						
-						$(document).on("touchend", "#meno"+ item.Catalogo +"", function(e){
-							SottProd(item.Cod_Prodotto);
-						});
-	  
-					});
-			
-				  }
-			});
-		   
-		   $(".spinner").hide();
-		   $("#noconn").hide();
-		   
-		   
-		   },
-		   error: function(){
-		   $(".spinner").hide();
-		   
-		   navigator.notification.alert(
-										'Possibile errore di rete, riprova tra qualche minuto 2',  // message
-										alertDismissed,         // callback
-										'Attenzione',            // title
-										'Done'                  // buttonName@
-										);
-		   
-		   },
-		   dataType:"jsonp"});
-}
 
 function seleziona() {
 	db = window.openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);

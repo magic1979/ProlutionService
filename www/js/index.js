@@ -33,57 +33,6 @@ var app = {
 		 if(PushbotsPlugin.isAndroid()){
 			PushbotsPlugin.initializeAndroid("56cc3df117795922728b4567", "484390836796");
 		 }
-					
-		 
-		 $(document).on("touchend", "#menuR", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "menu.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#badde2", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "cart.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#btnprofilo7", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "rating.html";
-			//initscroll()
-		});
-		
-		$(document).on("touchend", "#altro", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			//$("#mypanelH").panel("open");
-			$("#btnpanel").click();
-		});
-		
-							
-		$(document).on("touchend", "#premi", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "premi.html";
-		});
-		
-		$(document).on("touchend", "#notifiche", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "Notifiche.html";
-		});
-		
-		$(document).on("touchend", "#ordini", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			goprofilo()
-		});
-		
-		$(document).on("touchend", "#radio", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			gomappa()
-		});
-		
-		$(document).on("touchend", "#termini", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "TerminiCondizioni.html";
-		});
 		
 		
 		last_click_time = new Date().getTime();
