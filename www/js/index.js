@@ -1,12 +1,25 @@
+
 var app = {
+    // Application Constructor
     initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:@
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-
+    // deviceready Event Handler@
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.amendLinks('external-link');
+		//document.addEventListener("resume", onResume, false);
+        app.receivedEvent('deviceready');
+
 		
-<<<<<<< HEAD
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -87,7 +100,7 @@ var app = {
 					   saldopunti()
 		})
 		
-		$(document).on("touchend", "#termini", function(e){
+		$(document).on("touchend", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "tel:+393478253732";
 		});
@@ -160,37 +173,146 @@ var app = {
 			$("#btnprofilo").attr("href", "#mypanel");
 			$("#btnprofilo").attr("onclick", "#");
 		}
-=======
-		IDPage = getParameterByName('id');
->>>>>>> origin/master
 		
-		if (IDPage<>""){
-			alert(IDPage)
+		if((Badge10=="")||(!Badge10)||(Badge10==0)){
+			localStorage.setItem("Badge10", 0)
+			$('#badde').removeClass('badge1').addClass('badge2');
+			
+		}else{
+			$('#badde').removeClass('badge2').addClass('badge1');
+			$("#badde").attr("data-badge", Badge10);
+			$("#badde").html('<img src="img/CartW.png" width="20px">');
+			
+			$('#badde2').removeClass('badge2').addClass('badge1');
+			$("#badde2").attr("data-badge", Badge10);
+			$("#badde2").html('<img src="img/CartW.png" width="20px">');
 		}
-    },
+		
+		
+		var connectionStatus = false;
+		connectionStatus = navigator.onLine ? 'online' : 'offline';
+		
+		if(connectionStatus=='online'){
+			
+			checkPos();
+			agg();
+			mostrapunti()
+			$(".spinner").hide();
+			
+			buildprodotto('Pizza','Roma',1);
+			
+			
+			if ((localStorage.getItem("emailStory")=="")||(!localStorage.getItem("emailStory"))||(localStorage.getItem("emailStory")==0)){
+				//alert("Non ci sta")
+			}
+			else{
+				if(localStorage.getItem("emailStory")==localStorage.getItem("email2")){
+					//alert("stesso utente")
+				}
+				else{
+					//alert("cancella")
+					if(localStorage.getItem("email3")!=1){
+						navigator.notification.confirm(
+						'Stai cercando di accedere con un altro utente, assicurati prima di svuotare il tuo carrello per non perdere i punti della tua card prima di procedere.',  // message
+							onConfirm,              // callback to invoke with index of button pressed
+							'Attenzione',            // title
+							'Prosegui,Annulla'      // buttonLabels
+					);
+					}
+				}
+			}
+			
+			
+			if(localStorage.getItem("Registrato")!=1){
+				//alert("entrato")
+				
+			setTimeout (function(){
+						
+				PushbotsPlugin.getToken(function(token){
+					localStorage.setItem("Token", token);
+					//alert(token)
+					RegToken()
+				 });
+						
+			}, 2000);
+				
+			}
 
-    // Find everything with class className and open it
-    // with the InAppBrowser
-    amendLinks: function(className) {
-        var n = 0,
-            links = document.getElementsByClassName(className);
-
-        for (; n < links.length; n++) {
-            links[n].onclick = function(e) {
-                e.preventDefault();
-                window.open(''.concat(this.href), '_blank');
-            }
-        }
+			
+			$("#footer").show();
+			
+		}
+		else{
+			$('#noconn').show();
+			
+			var tabella = "<table align='center' border='0' width='100%' height='120px'>";
+			tabella = tabella + "<tr><td align='center'><a href='javascript:riparti()' class='btn'><font color='#fff'>Connetti</font></a></td></tr>";
+			tabella = tabella + "</table>";
+			
+			$("#noconn").html(tabella);
+			
+			
+			$("#footer").show();
+		}
     }
-};
-
-app.initialize();
-
-function ciccio(){
-	alert(1);
+	
 }
 
-<<<<<<< HEAD
+function onConfirm(button) {
+	
+	if (button==1){
+		localStorage.setItem("email3", 1);
+		dlt()
+	}
+	else{
+		localStorage.setItem("email2", localStorage.getItem("emailStory"));
+		
+		localStorage.setItem("loginvera", "")
+		localStorage.setItem("email", "")
+		
+		window.location.href = "Login.html";
+	}
+}
+
+function gocart() {
+	db = window.openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);
+	
+	$(document).on('pagebeforeshow', function () {
+		$(this).find('a[data-rel=back]').buttonMarkup({
+		iconpos: 'notext'
+	});
+				   
+	//setTimeout(function() {
+		//$(window).scrollTop($(window).scrollTop()+1);
+		//window.scrollTo(0,0);
+	//}, 500);
+				   
+ });
+	
+	var email = localStorage.getItem("email");
+	var Badge10 = localStorage.getItem("Badge10");
+	$("#badde3").attr("data-badge", Badge10);
+	
+	if (Badge10 > 0){
+		$('#badde3').removeClass('badge2').addClass('badge3');
+	}
+
+	
+	if((email=="")||(!email)){
+		$("#btnprofilo3").attr("href", "#page4");
+		$("#btnprofilo3").attr("onclick", "javascript:checklogin();");
+	}else{
+		$("#btnprofilo3").attr("href", "#mypanel");
+		$("#btnprofilo3").attr("onclick", "#");
+	}
+	
+	//$("#riepilogo9").html("");
+	
+
+	//$('#contenutoCart').html(landmark);
+	seleziona();
+}
+
 function AggProd(prod) {
 	
 	var loggato = localStorage.getItem("loginvera")
@@ -1131,11 +1253,3 @@ function RegToken(){
 
 
 
-=======
-function getParameterByName(name) {
-	name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-						  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-						  results = regex.exec(location.search);
-						  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-						  }
->>>>>>> origin/master

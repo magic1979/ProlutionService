@@ -20,7 +20,6 @@ function onDeviceReady() {
 							  last_click_time = click_time;
 							  
 							  }, true);
-<<<<<<< HEAD
 							  
 		$(document).on("touchend", "#menuR", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
@@ -77,14 +76,17 @@ function onDeviceReady() {
 			window.location.href = "rating.html";
 			//initscroll()
 		});
-		
-				$(document).on("touchend", "#chisiamo", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "chisiamo.html";
-		});
-=======
->>>>>>> origin/master
 	
+		$(document).on("touchend", "#chisiamo", function(e){
+				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+				   window.location.href = "chisiamo.html";
+				   //initscroll()
+				   });
+	
+		$(document).on("touchend", "#tel", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "tel:+393478253732";
+		});
     
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';

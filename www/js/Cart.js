@@ -3,7 +3,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
 	
-<<<<<<< HEAD
 	$(document).on("touchend", "#menuR", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "menu.html";
@@ -69,15 +68,18 @@ function onDeviceReady() {
 			compraConsegna(2);
 			//initscroll()
 		});
-		
-		$(document).on("touchend", "#chisiamo", function(e){
+	
+	$(document).on("touchend", "#chisiamo", function(e){
+				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+				   window.location.href = "chisiamo.html";
+				   });
+				   
+		$(document).on("touchend", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "chisiamo.html";
+			window.location.href = "tel:+393478253732";
 		});
 		
 	
-=======
->>>>>>> origin/master
 	
 	$('#OraConsegna').focus(function(){
 		myScroll.scrollToElement("#OraConsegna", "1s");
