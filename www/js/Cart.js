@@ -3,6 +3,81 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
 	
+<<<<<<< HEAD
+	$(document).on("touchend", "#menuR", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "menu.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#badde4", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#programas", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "index.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#altro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			//$("#mypanelH").panel("open");
+			$("#btnpanel").click();
+		});
+		
+							
+		$(document).on("touchend", "#premi", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "premi.html";
+		});
+		
+		$(document).on("touchend", "#notifiche", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "Notifiche.html";
+		});
+		
+		$(document).on("touchend", "#ordini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			goprofilo()
+		});
+		
+		$(document).on("touchend", "#radio", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gomappa()
+		});
+		
+		$(document).on("touchend", "#termini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "TerminiCondizioni.html";
+		});
+		
+		$(document).on("touchend", "#recensioni", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "rating.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#consegna", function(e){
+			compraConsegna(1);
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#negozio", function(e){
+			compraConsegna(2);
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#chisiamo", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "chisiamo.html";
+		});
+		
+	
+=======
+>>>>>>> origin/master
 	
 	$('#OraConsegna').focus(function(){
 		myScroll.scrollToElement("#OraConsegna", "1s");
@@ -132,13 +207,14 @@ function someFunctionOnDblClick(){
 }
 
 function seleziona() {
+	$('#contenutoCart').html("")
 	db = window.openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);
 	
 	var Badge10 = localStorage.getItem("Badge10");
 	$("#badde3").attr("data-badge", Badge10);
 	var TOT = localStorage.getItem("TOT");
 	
-	var landmark = '<table id="myTable" class="tablesorter"><thead><tr><th><font color="white" size="2">ORDINE</font><img src="img/giu2.png" height="10px"></th><th><font color="white" size="2">QTA</font><img src="img/giu2.png" height="10px"></th><th><font color="white" size="2">COSTO</font><img src="img/giu2.png" height="10px"></th><th><font color="white" size="2"></font></th><th><font color="white" size="2"></font></th></tr></thead><tbody id="contenutoCart">';
+	//$('#contenutoCart').append('');
 	
 	
 	db.transaction(function (tx) {
@@ -159,22 +235,75 @@ function seleziona() {
 					 
 					 if (n != -1){
 						
-						landmark = landmark + '<tr><td><font size="3">'+ results.rows.item(i).Nome +'</font></td><td><font size="3">'+ results.rows.item(i).Qta +'<font color="#000" size="1"> x('+ Number(Punita).toFixed(2) +'&euro;)</font></td><td><font size="3">'+ Number(results.rows.item(i).Descrizione).toFixed(2) +'&euro;</font></td><td align="center"></td><td align="center"></td></tr>';
+						$('#contenutoCart').append('<table width="100%"><tr><td width="35%" align="center"><font size="2">'+ results.rows.item(i).Nome +'</font></td><td width="25%" align="center"><font size="2">'+ results.rows.item(i).Qta +'<font color="#000" size="1"> x('+ Number(Punita).toFixed(2) +'&euro;)</font></td><td width="20%"><font size="2">'+ Number(results.rows.item(i).Descrizione).toFixed(2) +'&euro;</font></td><td width="10%" align="center"></td><td width="10%" align="center"></td></tr></table>');
 					 }
 					 else
 					 {
-						landmark = landmark + '<tr><td><font size="3">'+ results.rows.item(i).Nome +'</font></td><td><font size="3">'+ results.rows.item(i).Qta +'<font color="#000" size="1"> x('+ Number(Punita).toFixed(2) +'&euro;)</font></td><td><font size="3">'+ Number(results.rows.item(i).Descrizione).toFixed(2) +'&euro;</font></td><td align="center"><a href="javascript:SottProd('+ parseInt(results.rows.item(i).id) +')"><div width="28px" class="home"></div></a></td><td align="center"><a href="javascript:AggProd('+ parseInt(results.rows.item(i).id) +')"><div width="28px" class="home1"></div></td></tr>';
+						//landmark = landmark + '<tr><td><font size="3">'+ results.rows.item(i).Nome +'</font></td><td><font size="3">'+ results.rows.item(i).Qta +'<font color="#000" size="1"> x('+ Number(Punita).toFixed(2) +'&euro;)</font></td><td><font size="3">'+ Number(results.rows.item(i).Descrizione).toFixed(2) +'&euro;</font></td><td align="center"><a href="javascript:SottProd('+ parseInt(results.rows.item(i).id) +')"><div width="28px" class="home"></div></a></td><td align="center"><a href="javascript:AggProd('+ parseInt(results.rows.item(i).id) +')"><div width="28px" class="home1"></div></td></tr>';
+						
+						//landmark = landmark + '<tr><td><font size="3">'+ results.rows.item(i).Nome +'</font></td><td><font size="3">'+ results.rows.item(i).Qta +'<font color="#000" size="1"> x('+ Number(Punita).toFixed(2) +'&euro;)</font></td><td><font size="3">'+ Number(results.rows.item(i).Descrizione).toFixed(2) +'&euro;</font></td><td align="center"><a id="meno'+ parseInt(results.rows.item(i).id) +'" href="javascript:SottProd('+ parseInt(results.rows.item(i).id) +')"><div width="28px" class="home"></div></a></td><td align="center"><a id="add'+ parseInt(results.rows.item(i).id) +'" href="javascript:AggProd('+ parseInt(results.rows.item(i).id) +')"><div width="28px" class="home1"></div></td></tr>';
+						 
+						$("#contenutoCart").append("<table width='100%'><tr><td width='30%' width='35%' align='center'><font size='2'>"+ results.rows.item(i).Nome +"</font></td><td width='25%' align='center'><font size='2'>"+ results.rows.item(i).Qta +"<font color='#000' size='1'> x("+ Number(Punita).toFixed(2) +"&euro;)</font></td><td width='20%'><font size='2'>"+ Number(results.rows.item(i).Descrizione).toFixed(2) +"&euro;</font></td><td width='10%' align='center'><a id='meno"+ results.rows.item(i).id +"' href='#'><div width='28px' class='home'></div></a></td><td width='10%' align='center'><a id='add"+ results.rows.item(i).id +"' href='#'><div width='28px' class='home1'></div></td></tr></table>");
+					 
+						//alert("add"+ results.rows.item(i).id +"")
+					 
+						ciccio(results.rows.item(i).id);
+						
 					 }
 					 
 					 
 					 }
 					 
-					 landmark = landmark + '</tbody></table>';
-					 $('#contenutoCart').html(landmark);
+					 //$('#contenutoCart').append('</tbody></table>');
+					 //$('#contenutoCart').html(landmark);
+					 
 					 
 					 selPrezzo();
 					 
 					 selPunti();
+					 
+					 //selbtn()
+
+					 }, null);
+				   });
+}
+
+function ciccio(id) {
+	
+	$(document).on("touchstart", "#add"+ id +"", function(e){
+		e.stopImmediatePropagation();
+		e.preventDefault();
+		AggProd(id);
+	});
+	
+	$(document).on("touchstart", "#meno"+ id +"", function(e){
+		e.stopImmediatePropagation();
+		e.preventDefault();
+		SottProd(id);
+	});
+
+}
+
+function selbtn() {
+	db = window.openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);
+	
+	
+	db.transaction(function (tx) {
+       tx.executeSql('SELECT * FROM Ordine', [], function (tx, results) {
+					 var len = results.rows.length, i;
+					 var Punita;
+					 
+					 for (i = 0; i < len; i++){
+					 
+						$(document).on("touchend", "#add"+ parseInt(results.rows.item(i).id) +"", function(e){
+							AggProd(parseInt(results.rows.item(i).id));
+						});
+						
+						$(document).on("touchend", "#meno"+ parseInt(results.rows.item(i).id) +"", function(e){
+							SottProd(parseInt(results.rows.item(i).id));
+						});
+					 
+					 }
 
 					 }, null);
 				   });

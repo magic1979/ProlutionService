@@ -5,7 +5,7 @@ function onDeviceReady() {
 	
 	last_click_time = new Date().getTime();
 	
-	document.addEventListener('click', function (e) {
+	document.addEventListener('touchend', function (e) {
 							  
 							  click_time = e['timeStamp'];
 							  
@@ -20,6 +20,70 @@ function onDeviceReady() {
 							  last_click_time = click_time;
 							  
 							  }, true);
+<<<<<<< HEAD
+	
+	$(document).on("touchend", "#menuR", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "menu.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#badde3", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#programas", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "index.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#altro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			//$("#mypanelH").panel("open");
+			$("#btnpanel").click();
+		});
+		
+							
+		$(document).on("touchend", "#premi", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "premi.html";
+		});
+		
+		$(document).on("touchend", "#notifiche", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "Notifiche.html";
+		});
+		
+		$(document).on("touchend", "#ordini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			goprofilo()
+		});
+		
+		$(document).on("touchend", "#radio", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gomappa()
+		});
+		
+		$(document).on("touchend", "#termini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "TerminiCondizioni.html";
+		});
+		
+		$(document).on("touchend", "#recensioni", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "rating.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchend", "#chisiamo", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "chisiamo.html";
+		});
+=======
+>>>>>>> origin/master
 
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';
@@ -108,7 +172,7 @@ function onDeviceReady() {
 
 function buildcatalogo(Catalogo) {
 	//alert(Catalogo)
-	var tabella = "<table align='center' border='0' width='320px' height='90px'>";
+	var tabella = "";
 	
 	$(".spinner").show();
 	$.ajax({
@@ -127,20 +191,38 @@ function buildcatalogo(Catalogo) {
 					window.location.href = "menu.html";
 				  }
 				  else{
-				  tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a href='javascript:AggProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home1'></div></a><br><a href='javascript:SottProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home'></div></a></td></tr>";
+				  //tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='javascript:AggProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='javascript:SottProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home'></div></a></td></tr>";
+				  
+				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home'><input type='hidden' id='"+ item.Cod_Prodotto +"' name='"+ item.Cod_Prodotto +"' value='"+ item.Cod_Prodotto +"'></div></a></td></tr></table>");
 				  }
+				  
+				  $(document).on("touchstart", "#add"+ item.Cod_Prodotto +"", function(e){
+					localStorage.setItem("pulsante","1")
+					e.stopImmediatePropagation();
+					e.preventDefault();
+					AggProd(item.Cod_Prodotto);
+					return false;
+				  });
+				  
+				  $(document).on("touchstart", "#meno"+ item.Cod_Prodotto +"", function(e){
+					localStorage.setItem("pulsante","1")
+					e.stopImmediatePropagation();
+				    e.preventDefault();
+					SottProd(item.Cod_Prodotto);
+					return false;
+				  });
+				  
 				  // alert(item.ID)
 			});
 		   
-		   tabella = tabella + "</table>";
+		   tabella = tabella + "";
 		   
 		   $(".spinner").hide();
 		    $("#noconn").hide();
 		   
-		   $("#CatalogoPag").html(tabella);
+		   //$("#CatalogoPag").html(tabella);
 		   
 		   myScroll.refresh();
-		   
 		   
 		   },
 		   error: function(){
@@ -155,9 +237,78 @@ function buildcatalogo(Catalogo) {
 		   
 		   },
 		   dataType:"jsonp"});
-	
 }
 
+function catalogotouch(Catalogo) {
+	
+	$(document).on("touchstart", "#add405", function(e){
+			localStorage.setItem("pulsante","1")
+			e.stopImmediatePropagation();
+			e.preventDefault();
+			AggProd("405");
+			return false;
+	});
+	
+	/*$(".spinner").show();
+	$.ajax({
+		   type:"GET",
+		   url:"http://msop.it/fratelli/www/check_Home.asp",
+		   contentType: "application/json",
+		   data: {categoria:Catalogo},
+		   timeout: 7000,
+		   jsonp: 'callback',
+		   crossDomain: true,
+		   success:function(result){
+		   
+		   $.each(result, function(i,item){
+				  
+				  if (item.ID==0){
+					window.location.href = "menu.html";
+				  }
+				  else{
+				  
+					  $.each(result, function(i,item){
+				  
+					if(document.getElementById(item.Cod_Prodotto).value==item.Cod_Prodotto){
+					
+						$(document).on("touchend", "#add"+ item.Cod_Prodotto +"", function(e){
+							localStorage.setItem("pulsante","1")
+							AggProd(item.Cod_Prodotto);
+							e.preventDefault();
+							return;
+						});
+						
+						$(document).on("touchend", "#meno"+ item.Cod_Prodotto +"", function(e){
+							localStorage.setItem("pulsante","1")
+							SottProd(item.Cod_Prodotto);
+							e.preventDefault();
+							return;
+						});
+					}
+	  
+					});
+			
+				  }
+			});
+		   
+		   $(".spinner").hide();
+		   $("#noconn").hide();
+		   
+		   
+		   },
+		   error: function(){
+		   $(".spinner").hide();
+		   
+		   navigator.notification.alert(
+										'Possibile errore di rete, riprova tra qualche minuto 2',  // message
+										alertDismissed,         // callback
+										'Attenzione',            // title
+										'Done'                  // buttonName@
+										);
+		   
+		   },
+		   dataType:"jsonp"});*/
+}
 
 function seleziona() {
 	db = window.openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);
@@ -183,7 +334,10 @@ function AggProd(prod) {
 	var test;
 	var P1 = '110';
 	
+	if(localStorage.getItem("pulsante")=="1"){
 	
+	//alert(document.getElementById(prod).value)
+		
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
@@ -219,8 +373,12 @@ function AggProd(prod) {
 						  });
 		   
 		   if(aggiornamento==0){
-		   agg2(prod)
-		   //alert("Prod:" + prod);
+		   
+			agg2(prod)
+			//alert("Prod:" + prod);
+		   }
+		   else{
+			localStorage.setItem("pulsante","0")
 		   }
    
 		   $(".spinner").hide();
@@ -237,10 +395,12 @@ function AggProd(prod) {
 		   
 		   },
 		   dataType:"jsonp"});
-	
+		
+	}
 }
 
 function agg2(prod){
+	
 	var loggato = localStorage.getItem("loginvera")
 	var tblProfile;
 	
@@ -251,6 +411,8 @@ function agg2(prod){
 	else{
 		localStorage.setItem("emailStory", localStorage.getItem("email"));
 	}
+	
+	if(localStorage.getItem("pulsante")=="1"){
 	
 	db = window.openDatabase('mydb', '1.0', 'TestDB', 2 * 1024 * 1024);
 	var msg;
@@ -280,6 +442,7 @@ function agg2(prod){
 						  tx.executeSql('INSERT INTO Ordine (id, IdProdotto, Qta, Descrizione, Nome) VALUES ('+ prod +', 1, 1, "'+ prezzo +'", "'+ msg +'")');
 						  });
 		   $(".spinner").hide();
+		   
 		   },
 		   error: function(){
 		   $(".spinner").hide();
@@ -293,6 +456,9 @@ function agg2(prod){
 		   
 		   },
 		   dataType:"jsonp"});
+		
+		 localStorage.setItem("pulsante","0")
+	}
 
 }
 
@@ -304,6 +470,8 @@ function SottProd(prod) {
 	var prezzo;
 	var test;
 	var P1 = '110';
+	
+	if(localStorage.getItem("pulsante")=="1"){
 	
 	$(".spinner").show();
 	$.ajax({
@@ -323,6 +491,7 @@ function SottProd(prod) {
 				  });
 		   var Badge10;
 		   
+		    //alert("3")
 		   
 		   db.transaction(function (tx) {
 						  tx.executeSql('SELECT * FROM Ordine where id='+ prod +'', [], function (tx, results) {
@@ -381,7 +550,8 @@ function SottProd(prod) {
 	
 	
 	
-	//seleziona();
+		localStorage.setItem("pulsante","0")
+	}
 }
 
 
