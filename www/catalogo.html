@@ -26,6 +26,9 @@
 		<script src="jquery.countdown.js"></script>
 		<script src="jquery.raty.js"></script>
 		
+        
+        <script type="text/javascript" src="js/Catalogo.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
 		
         <title>FoodApp</title>
 		
@@ -469,6 +472,23 @@ a {text-decoration:none;}
 		}
 		
 		</style>
+        
+        <script type="text/javascript">
+			
+			var myScroll;
+			
+			function loaded () {
+				myScroll = new IScroll('#wrapper', { click: true });
+				setTimeout (function(){
+							myScroll.refresh();
+							}, 1500);
+			}
+		
+		document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 300); }, false);
+		
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+		
+			</script>
 		
     </head>
     <body>
@@ -566,25 +586,7 @@ a {text-decoration:none;}
 		
 
         <script type="text/javascript" src="cordova.js"></script>
-		<script type='application/javascript' src='js/fastclick.js'></script>
 		
-		<script type="text/javascript" src="js/Catalogo.js"></script>
-		<script type="text/javascript" src="js/iscroll.js"></script>
-		
-		
-		<script type="text/javascript">
-			
-			var myScroll;
-			
-			function loaded () {
-				myScroll = new IScroll('#wrapper', { click: true });
-			}
-			
-			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 300); }, false);
-			
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-		
-		</script>
 		
     </body>
 </html>

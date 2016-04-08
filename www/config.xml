@@ -9,7 +9,7 @@
 		<author href="http://www.app-piu.it" email="info@app-piu.it">
 			Prolution srl
 		</author>
-		<preference name="phonegap-version" value="cli-5.2.0" />
+		<preference name="phonegap-version" value="cli-6.0.0" />
 		<preference name="orientation" value="portrait" />
 		<preference name="fullscreen" value="false" />
 		<preference name="target-device" value="universal" />
@@ -29,8 +29,8 @@
 		<preference name="KeyboardDisplayRequiresUserAction" value="true" />
 		<preference name="HideKeyboardFormAccessoryBar" value="true" />
 		<preference name="SuppressesIncrementalRendering" value="true" />
-		<preference name="android-minSdkVersion" value="11" />
-		<preference name="android-targetSdkVersion" value="11" />
+		<preference name="android-minSdkVersion" value="14" />
+		<preference name="android-targetSdkVersion" value="21" />
 		<preference name="android-installLocation" value="auto" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="ErrorUrl" value="http://www.app-piu.it"/>

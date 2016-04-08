@@ -157,7 +157,7 @@ function onDeviceReady() {
 	
 	
 	$('#rati1').raty({
-				  click: function(score, evt) {
+				  touchend: function(score, evt) {
 				  //alert('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
 					 var loggato = localStorage.getItem("loginvera")
 					 

@@ -35,101 +35,82 @@ var app = {
 		 }
 					
 		 
-		 $(document).on("touchend", "#menuR", function(e){
+		 $(document).on("touchstart", "#menuR", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "menu.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#badde2", function(e){
+		$(document).on("touchstart", "#badde2", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "cart.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#btnprofilo7", function(e){
+		$(document).on("touchstart", "#btnprofilo7", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "rating.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#altro", function(e){
+		$(document).on("touchstart", "#altro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			//$("#mypanelH").panel("open");
 			$("#btnpanel").click();
 		});
 		
 							
-		$(document).on("touchend", "#premi", function(e){
+		$(document).on("touchstart", "#premi", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "premi.html";
 		});
 		
-		$(document).on("touchend", "#notifiche", function(e){
+		$(document).on("touchstart", "#notifiche", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "Notifiche.html";
 		});
 		
-		$(document).on("touchend", "#ordini", function(e){
+		$(document).on("touchstart", "#ordini", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			goprofilo()
 		});
 		
-		$(document).on("touchend", "#radio", function(e){
+		$(document).on("touchstart", "#radio", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			gomappa()
 		});
 		
-		$(document).on("touchend", "#termini", function(e){
+		$(document).on("touchstart", "#termini", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "TerminiCondizioni.html";
 		});
 		
-		$(document).on("touchend", "#faccialibro", function(e){
+		$(document).on("touchstart", "#faccialibro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			gofacebook()
 		});
 		
-		$(document).on("touchend", "#uscire", function(e){
+		$(document).on("touchstart", "#uscire", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			uscire()
 		});
 		
-		$(document).on("touchend", "#entrare", function(e){
+		$(document).on("touchstart", "#entrare", function(e){
 					   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 					   saldopunti()
 		})
 		
-		$(document).on("touchend", "#tel", function(e){
+		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "tel:+393478253732";
 		});
 		
-		$(document).on("touchend", "#chisiamo", function(e){
+		$(document).on("touchstart", "#chisiamo", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "chisiamo.html";
 		});
 		
-		
-		
-		last_click_time = new Date().getTime();
-		
-		document.addEventListener('click', function (e) {
-								  
-								  click_time = e['timeStamp'];
-								  
-								  if (click_time && (click_time - last_click_time) < 1000) { e.stopImmediatePropagation();
-								  
-								  e.preventDefault();
-								  
-								  return false;
-								  
-								  }
-								  
-								  last_click_time = click_time;
-								  
-								  }, true);
-		
+	
 		document.addEventListener("showkeyboard", function(){ $("[data-role=footer]").hide();}, false);
 		document.addEventListener("hidekeyboard", function(){ $("[data-role=footer]").show();}, false);
 		
@@ -147,10 +128,6 @@ var app = {
 			//		   }, 20 );
 			});
 	
-	
-		$(document).keydown(function (eventObj){
-			getKey(eventObj);
-		});
 		
 		var email = localStorage.getItem("email");
 		var loginvera = localStorage.getItem("loginvera");

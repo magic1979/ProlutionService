@@ -26,6 +26,12 @@ function onDeviceReady() {
 			window.location.href = "cart.html";
 			//initscroll()
 		});
+		
+				$(document).on("touchend", "#casa", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "index.html";
+			//initscroll()
+		});
 
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';

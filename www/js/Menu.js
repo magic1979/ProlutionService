@@ -3,23 +3,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
 	
-	last_click_time = new Date().getTime();
-	
-	document.addEventListener('click', function (e) {
-							  
-		  click_time = e['timeStamp'];
-		  
-		  if (click_time && (click_time - last_click_time) < 1000) { e.stopImmediatePropagation();
-		  
-		  e.preventDefault();
-		  
-		  return false;
-		  
-		  }
-		  
-		  last_click_time = click_time;
-		  
-}, true);
 							  
 	$(document).on("touchend", "#menuR", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
@@ -196,15 +179,15 @@ function buildmenu() {
 				  
 				   $("#menuL").append("<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a id='conta"+ item.ID +"' href='#' rel='external'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a id='conta2"+ item.ID +"' href='#' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a id='conta3"+ item.ID +"' href='#' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>");
 				  
-				  $(document).on("touchend", "#conta"+ item.ID +"", function(e){
+				  $(document).on("tap", "#conta"+ item.ID +"", function(e){
 					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
 				  });
 				  
-				  $(document).on("touchend", "#conta3"+ item.ID +"", function(e){
+				  $(document).on("tap", "#conta3"+ item.ID +"", function(e){
 					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
 				  });
 				  
-				  $(document).on("touchend", "#conta2"+ item.ID +"", function(e){
+				  $(document).on("tap", "#conta2"+ item.ID +"", function(e){
 					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
 				  });
 				  
@@ -219,7 +202,9 @@ function buildmenu() {
 		   //$("#menuL").html(tabella);
 		   //buildtouch()
 		   
-		   myScroll.refresh();
+		   setTimeout (function(){
+				myScroll.refresh();
+			}, 1000);
 		   
 	   
 		   },

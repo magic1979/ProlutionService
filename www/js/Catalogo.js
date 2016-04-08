@@ -3,23 +3,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
 	
-	last_click_time = new Date().getTime();
-	
-	document.addEventListener('touchend', function (e) {
-							  
-							  click_time = e['timeStamp'];
-							  
-							  if (click_time && (click_time - last_click_time) < 1000) { e.stopImmediatePropagation();
-							  
-							  e.preventDefault();
-							  
-							  return false;
-							  
-							  }
-							  
-							  last_click_time = click_time;
-							  
-							  }, true);
 	
 	$(document).on("touchend", "#menuR", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
@@ -230,7 +213,9 @@ function buildcatalogo(Catalogo) {
 		   
 		   //$("#CatalogoPag").html(tabella);
 		   
-		   myScroll.refresh();
+		   setTimeout (function(){
+				myScroll.refresh();
+			}, 1000);
 		   
 		   },
 		   error: function(){
