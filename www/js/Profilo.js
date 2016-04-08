@@ -86,6 +86,12 @@ function onDeviceReady() {
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "tel:+393478253732";
 		});
+		
+				$(document).on("touchend", "#recensione", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "rating.html";
+			//initscroll()
+		});
     
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';

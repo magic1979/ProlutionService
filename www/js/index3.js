@@ -11,7 +11,7 @@ function onDeviceReady() {
 	
 	$(document).on("touchend", "#casa", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-				   window.location.href = "cart.html";
+				   window.location.href = "index.html";
 				   //initscroll()
 				   });
 	

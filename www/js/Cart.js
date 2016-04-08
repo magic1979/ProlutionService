@@ -33,6 +33,11 @@ function onDeviceReady() {
 			window.location.href = "premi.html";
 		});
 		
+		$(document).on("touchend", "#catalogo", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "premi.html";
+		});
+		
 		$(document).on("touchend", "#notifiche", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "Notifiche.html";
@@ -77,6 +82,12 @@ function onDeviceReady() {
 		$(document).on("touchend", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "tel:+393478253732";
+		});
+		
+		$(document).on("touchend", "#recensione", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "rating.html";
+			//initscroll()
 		});
 		
 	
