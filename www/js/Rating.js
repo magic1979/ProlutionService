@@ -2,6 +2,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
+	window.plugin.statusbarOverlay.hide();
 	
 	last_click_time = new Date().getTime();
 	
@@ -133,8 +134,6 @@ function onDeviceReady() {
 	var db;
 	var dbCreated = false;
 	
-	
-	//$("#radio").attr("href", "maps:saddr="+ localStorage.getItem("ciao") +","+ localStorage.getItem("ciao1") +"&daddr=Via di Acilia,17,Roma");
 	
 	var email = localStorage.getItem("email");
 	var Badge10 = localStorage.getItem("Badge10");

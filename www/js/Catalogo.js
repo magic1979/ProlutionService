@@ -2,6 +2,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
+	window.plugin.statusbarOverlay.hide();
 	
 	
 	$(document).on("touchend", "#menuR", function(e){
