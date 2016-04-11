@@ -24,7 +24,6 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 		//PushbotsPlugin.debug(true);
-		StatusBar.hide();
 		
 		//PushbotsPlugin.setBadge(1);
 	    	if(PushbotsPlugin.isiOS()){
@@ -856,16 +855,15 @@ function buildprodotto(Categoria,Provincia,Pagina) {
 		   $(".spinner").hide();
 		   $("#noconn").hide();
 		   
-		   //$("#classifica").html(landmark2);
-		   
-		    myScroll.refresh();
-		   //myScroll = new IScroll('#wrapper', { click: true });
+			
+			setTimeout (function(){
+				myScroll.refresh();
+			}, 1000);
 		   
 		   
 		   },
 		   error: function(){
 		   $(".spinner").hide();
-		   
 		   
 		   
 		   navigator.notification.alert(
