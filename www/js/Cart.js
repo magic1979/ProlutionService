@@ -2,89 +2,91 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
+	window.plugin.statusbarOverlay.hide();
 	
-	$(document).on("touchend", "#menuR", function(e){
+	
+	$(document).on("touchstart", "#menuR", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "menu.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#badde4", function(e){
+		$(document).on("touchstart", "#badde4", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "cart.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#programas", function(e){
+		$(document).on("touchstart", "#programas", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "index.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#altro", function(e){
+		$(document).on("touchstart", "#altro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			//$("#mypanelH").panel("open");
 			$("#btnpanel").click();
 		});
 		
 							
-		$(document).on("touchend", "#premi", function(e){
+		$(document).on("touchstart", "#premi", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "premi.html";
 		});
 		
-		$(document).on("touchend", "#catalogo", function(e){
+		$(document).on("touchstart", "#catalogo", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "premi.html";
 		});
 		
-		$(document).on("touchend", "#notifiche", function(e){
+		$(document).on("touchstart", "#notifiche", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "Notifiche.html";
 		});
 		
-		$(document).on("touchend", "#ordini", function(e){
+		$(document).on("touchstart", "#ordini", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			goprofilo()
 		});
 		
-		$(document).on("touchend", "#radio", function(e){
+		$(document).on("touchstart", "#radio", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			gomappa()
 		});
 		
-		$(document).on("touchend", "#termini", function(e){
+		$(document).on("touchstart", "#termini", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "TerminiCondizioni.html";
 		});
 		
-		$(document).on("touchend", "#recensioni", function(e){
+		$(document).on("touchstart", "#recensioni", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "rating.html";
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#consegna", function(e){
+		$(document).on("touchstart", "#consegna", function(e){
 			compraConsegna(1);
 			//initscroll()
 		});
 		
-		$(document).on("touchend", "#negozio", function(e){
+		$(document).on("touchstart", "#negozio", function(e){
 			compraConsegna(2);
 			//initscroll()
 		});
 	
-	$(document).on("touchend", "#chisiamo", function(e){
+	$(document).on("touchstart", "#chisiamo", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 				   window.location.href = "chisiamo.html";
 				   });
 				   
-		$(document).on("touchend", "#tel", function(e){
+		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "tel:+393478253732";
 		});
 		
-		$(document).on("touchend", "#recensione", function(e){
+		$(document).on("touchstart", "#recensione", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "rating.html";
 			//initscroll()
@@ -308,11 +310,11 @@ function selbtn() {
 					 
 					 for (i = 0; i < len; i++){
 					 
-						$(document).on("touchend", "#add"+ parseInt(results.rows.item(i).id) +"", function(e){
+						$(document).on("touchstart", "#add"+ parseInt(results.rows.item(i).id) +"", function(e){
 							AggProd(parseInt(results.rows.item(i).id));
 						});
 						
-						$(document).on("touchend", "#meno"+ parseInt(results.rows.item(i).id) +"", function(e){
+						$(document).on("touchstart", "#meno"+ parseInt(results.rows.item(i).id) +"", function(e){
 							SottProd(parseInt(results.rows.item(i).id));
 						});
 					 

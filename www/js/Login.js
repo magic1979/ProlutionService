@@ -23,34 +23,34 @@ function onDeviceReady() {
 							  
 							  }, true);
 							  
-		$(document).on("touchend", "#accedi", function(e){
+		$(document).on("touchstart", "#accedi", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			login()
 		});
 		
-		$(document).on("touchend", "#iscriviti", function(e){
+		$(document).on("touchstart", "#iscriviti", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			$("#btnpanel").click();
 		});
 		
-		$(document).on("touchend", "#iscriviti2", function(e){
+		$(document).on("touchstart", "#iscriviti2", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			iscriviti()
 		});
 		
-		$(document).on("touchend", "#accedi2", function(e){
+		$(document).on("touchstart", "#accedi2", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			$("#btnpanel2").click();
 			//initscroll()
 		});
 	
-	  $(document).on("touchend", "#casa", function(e){
+	  $(document).on("touchstart", "#casa", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 				   window.location.href = "index.html";
 		});
 	
 	
-		$(document).on("touchend", "#casa2", function(e){
+		$(document).on("touchstart", "#casa2", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 				   window.location.href = "index.html";
 		});

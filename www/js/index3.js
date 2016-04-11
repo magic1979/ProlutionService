@@ -4,13 +4,13 @@ function onDeviceReady() {
 	//document.addEventListener("resume", onResume, false);
 	window.plugin.statusbarOverlay.hide();
 	
-		$(document).on("touchend", "#btncarrello", function(e){
+		$(document).on("touchstart", "#btncarrello", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "cart.html";
 			//initscroll()
 		});
 	
-	$(document).on("touchend", "#casa", function(e){
+	$(document).on("touchstart", "#casa", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 				   window.location.href = "index.html";
 				   //initscroll()
