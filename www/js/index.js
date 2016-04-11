@@ -24,6 +24,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 		//PushbotsPlugin.debug(true);
+		StatusBar.hide();
 		
 		//PushbotsPlugin.setBadge(1);
 	    	if(PushbotsPlugin.isiOS()){
