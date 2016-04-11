@@ -23,7 +23,6 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-		window.plugin.statusbarOverlay.hide();
 		//PushbotsPlugin.debug(true);
 		
 		//PushbotsPlugin.setBadge(1);

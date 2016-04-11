@@ -2,7 +2,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
-	window.plugin.statusbarOverlay.hide();
 	
 	last_click_time = new Date().getTime();
 	

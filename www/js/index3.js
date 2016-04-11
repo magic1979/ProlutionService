@@ -2,7 +2,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
 	//document.addEventListener("resume", onResume, false);
-	window.plugin.statusbarOverlay.hide();
 	
 		$(document).on("touchstart", "#btncarrello", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
