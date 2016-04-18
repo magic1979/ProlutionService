@@ -23,14 +23,21 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-		//PushbotsPlugin.debug(true);
 		
-		//PushbotsPlugin.setBadge(1);
-	    	if(PushbotsPlugin.isiOS()){
-			PushbotsPlugin.initializeiOS("56cc3df117795922728b4567");
+		var email = localStorage.getItem("email");
+		
+		
+		if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
+			
+			window.location.href = "Login.html";
+		}
+		
+		
+		if(PushbotsPlugin.isiOS()){
+			PushbotsPlugin.initializeiOS("56893d101779599c7d8b4568");
 		 }
 		 if(PushbotsPlugin.isAndroid()){
-			PushbotsPlugin.initializeAndroid("56cc3df117795922728b4567", "484390836796");
+			PushbotsPlugin.initializeAndroid("56893d101779599c7d8b4568", "637328979344");
 		 }
 					
 		 
@@ -645,20 +652,20 @@ function checkPos() {
 	
 }
 
+	function gofacebook(){
+	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+}
+
 function gomappa(){
-	var addressLongLat = '41.777861,12.355745';
+	var addressLongLat = '41.863862,12.497881';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
 	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
 	
-	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system')
+	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
+	
 }
-
-function gofacebook(){
-	var ref = window.open('https://m.facebook.com/fratelli-1396958183922266', '_system', 'location=no');
-}
-
 
 function getDistance(lat1,lon1,lat2,lon2) {
 	var R = 6371; // Radius of the earth in km
@@ -799,7 +806,7 @@ function buildprodotto(Categoria,Provincia,Pagina) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/fratelli/www/Check_Home.asp",
+		   url:"http://msop.it/demoapp/www/Check_Home.asp",
 		   contentType: "application/json",
 		   //data: {Categoria:Categoria,Provincia:Provincia,Pagina:Pagina},
 		   data: {Categoria:"offerte"},
@@ -818,9 +825,9 @@ function buildprodotto(Categoria,Provincia,Pagina) {
 					landmark2 = landmark2 + "<a style='text-decoration: none;' href='#page2' onclick='javascript:pagina22("+ item.Cod_Prodotto +");' id='linkdettagli' ><img src='http://www.mistertod.it/public/up/"+ item.IMG +".png' width='700px' height='400px' class='arrotondamento'><table height='30px' border='0' width='90%'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='50%'><font size='2' color='#454545'>"+ item.Nome +"</font></td><td align='right'><font size='2' color='#454545'>"+ item.Citta +"</font></font></td></tr><tr><td align='left' width='50%'><font size='2' color='#454545'>Distanza:Km "+ distanza +" </font></td><td align='right'><font size='4' color='#B40431'>"+ item.Indirizzo +"</font></td></tr></table></a><br><hr class='div3'>";
 				  }
 				  else{
-					$("#classifica").append("<div id="+ item.Cod_Prodotto +"'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100%'></a><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'></div>");
+					$("#classifica").append("<div id="+ item.Cod_Prodotto +"'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><img src='http://msop.it/public/demoapp/"+ item.IMG +".png' width='100%'></a><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'></div>");
 					
-					 //$("#classifica").append("<div class='container'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><div class='tag'><img src='img/info.png' width='50px'></div></a><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100%'></div><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'>");
+					 //$("#classifica").append("<div class='container'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><div class='tag'><img src='img/info.png' width='50px'></div></a><img src='http://msop.it/public/demoapp/"+ item.IMG +".png' width='100%'></div><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'>");
 				  }
 				  
 				  $(document).on("tap", "#prod"+ item.Cod_Prodotto +"", function(e){
@@ -1187,7 +1194,7 @@ function RegToken(){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/fratelli/www/Check_RegToken.asp",
+			   url:"http://msop.it/demoapp/www/Check_RegToken.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email"),token:localStorage.getItem("Token"),platform:"Android"},
 			   timeout: 7000,

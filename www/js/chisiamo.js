@@ -58,8 +58,12 @@ function onDeviceReady() {
 	$(".spinner").hide();
 }
 
+	function gofacebook(){
+	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+}
+
 function gomappa(){
-	var addressLongLat = '41.830227,12.577421';
+	var addressLongLat = '41.863862,12.497881';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

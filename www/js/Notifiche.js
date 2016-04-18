@@ -185,7 +185,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_MieNotifiche.asp",
+		   url:"http://msop.it/demoapp/www/check_MieNotifiche.asp",
 		   contentType: "application/json",
 		   data: {email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -513,18 +513,19 @@ function uscire(){
 	window.location.href = "index.html";
 }
 
+	function gofacebook(){
+	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+}
+
 function gomappa(){
-	var addressLongLat = '41.777861, 12.355745';
+	var addressLongLat = '41.863862,12.497881';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
 	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
 	
-	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system')
-}
-
-function gofacebook(){
-	var ref = window.open('https://m.facebook.com/fratelli-1396958183922266', '_system', 'location=no');
+	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
+	
 }
 
 function riparti(){

@@ -3,6 +3,81 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     //document.addEventListener("resume", onResume, false);
 	
+			 $(document).on("touchstart", "#menuR", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "menu.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchstart", "#badde2", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "cart.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchstart", "#btnprofilo7", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "rating.html";
+			//initscroll()
+		});
+		
+		$(document).on("touchstart", "#altro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			//$("#mypanelH").panel("open");
+			$("#btnpanel").click();
+		});
+		
+							
+		$(document).on("touchstart", "#premi", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "premi.html";
+		});
+		
+		$(document).on("touchstart", "#notifiche", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "Notifiche.html";
+		});
+		
+		$(document).on("touchstart", "#ordini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			goprofilo()
+		});
+		
+		$(document).on("touchstart", "#radio", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gomappa()
+		});
+		
+		$(document).on("touchstart", "#termini", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "TerminiCondizioni.html";
+		});
+		
+		$(document).on("touchstart", "#faccialibro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gofacebook()
+		});
+		
+		$(document).on("touchstart", "#uscire", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			uscire()
+		});
+		
+		$(document).on("touchstart", "#entrare", function(e){
+					   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+					   saldopunti()
+		})
+		
+		$(document).on("touchstart", "#tel", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "tel:+393478253732";
+		});
+		
+		$(document).on("touchstart", "#chisiamo", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			window.location.href = "chisiamo.html";
+		});
+	
 	last_click_time = new Date().getTime();
 	
 	document.addEventListener('click', function (e) {
@@ -130,7 +205,7 @@ function buildcatalogo() {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_Home.asp",
+		   url:"http://msop.it/demoapp/www/check_Home.asp",
 		   contentType: "application/json",
 		   data: {categoria:"Premi"},
 		   timeout: 7000,
@@ -144,7 +219,7 @@ function buildcatalogo() {
 					window.location.href = "cart.html";
 				  }
 				  else{
-				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"Punti;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#' ><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#' onclick='#'><div width='28px' class='home'></div></a></td></tr></table>");
+				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/demoapp/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"Punti;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#' ><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#' onclick='#'><div width='28px' class='home'></div></a></td></tr></table>");
 				  }
 				  
 				  $(document).on("touchstart", "#add"+ item.Cod_Prodotto +"", function(e){
@@ -221,7 +296,7 @@ function AggProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_Prodotto_Punti.asp",
+		   url:"http://msop.it/demoapp/www/check_Prodotto_Punti.asp",
 		   contentType: "application/json",
 		   data: {id:prod,Punti:punteggio,Op:1,email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -324,7 +399,7 @@ function agg2(prod){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_Prodotto_Punti.asp",
+		   url:"http://msop.it/demoapp/www/check_Prodotto_Punti.asp",
 		   contentType: "application/json",
 		   data: {id:prod,Punti:punteggio,Op:1,email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -393,7 +468,7 @@ function SottProd(prod) {
 													  $(".spinner").show();
 													  $.ajax({
 															 type:"GET",
-															 url:"http://msop.it/fratelli/www/check_Prodotto_Punti.asp",
+															 url:"http://msop.it/demoapp/www/check_Prodotto_Punti.asp",
 															 contentType: "application/json",
 															 data: {id:prod,Punti:punteggio,Op:2,email:localStorage.getItem("email")},
 															 timeout: 7000,
@@ -449,7 +524,7 @@ function SottProd(prod) {
 													  $(".spinner").show();
 													  $.ajax({
 															 type:"GET",
-															 url:"http://msop.it/fratelli/www/check_Prodotto_Punti.asp",
+															 url:"http://msop.it/demoapp/www/check_Prodotto_Punti.asp",
 															 contentType: "application/json",
 															 data: {id:prod,Punti:punteggio,Op:2,email:localStorage.getItem("email")},
 															 timeout: 7000,
@@ -679,18 +754,19 @@ function getParameterByName(name) {
 
 
 						  
+	function gofacebook(){
+	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+}
+
 function gomappa(){
-	var addressLongLat = '41.777861,12.355745';
+	var addressLongLat = '41.863862,12.497881';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
 	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
 	
-	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system')
-}
-
-function gofacebook(){
-	var ref = window.open('https://m.facebook.com/fratelli-1396958183922266', '_system', 'location=no');
+	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
+	
 }
 						  
 						  function riparti(){
