@@ -24,15 +24,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 		
-		var email = localStorage.getItem("email");
-		
-		
-		if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
-			
-			window.location.href = "Login.html";
-		}
-		
-		
+	
 		if(PushbotsPlugin.isiOS()){
 			PushbotsPlugin.initializeiOS("569cc754177959df038b4567");
 		 }
