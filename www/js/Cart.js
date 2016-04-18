@@ -74,6 +74,13 @@ function onDeviceReady() {
 			compraConsegna(2);
 			//initscroll()
 		});
+		
+		$(document).on("touchstart", "#cartacc", function(e){
+			compraCC();
+			//initscroll()
+		});
+		
+		
 	
 	$(document).on("touchstart", "#chisiamo", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
@@ -90,6 +97,16 @@ function onDeviceReady() {
 			window.location.href = "rating.html";
 			//initscroll()
 		});
+		
+		$(document).on("touchstart", "#uscire", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			uscire()
+		});
+		
+		$(document).on("touchstart", "#entrare", function(e){
+					   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+					   saldopunti()
+		})
 		
 	
 	
@@ -1091,7 +1108,7 @@ function mostrapunti(){
 	var tblProfile;
 	
 	if((loggato=="")||(!loggato)){
-		tblProfile = "<tr><td><a href='javascript:saldopunti()' id='#' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-check ui-btn-icon-left' data-theme='b'>Login</a></td></tr>"
+		tblProfile = "<tr><td><a href='#' id='entrare' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-check ui-btn-icon-left' data-theme='b'>Login</a></td></tr>"
 	}else{
 		
 		$(".spinner").show();
@@ -1133,7 +1150,7 @@ function mostrapunti(){
 			   dataType:"jsonp"});
 
 
-		tblProfile = "<tr><td>SALDO PUNTI: "+ Number(localStorage.getItem("Punti")).toFixed(2) +"</td></tr><tr><td><a href='javascript:uscire()' id='#' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left' data-theme='b'>Logout</a></td></tr>"
+		tblProfile = "<tr><td>SALDO PUNTI: "+ Number(localStorage.getItem("Punti")).toFixed(2) +"</td></tr><tr><td><a href='#' id='uscire' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left' data-theme='b'>Logout</a></td></tr>"
 		
 		document.getElementById("NomeRegalo").value = localStorage.getItem("Nome") + " " + localStorage.getItem("Cognome")
 		document.getElementById("Indirizzo").value = localStorage.getItem("Indirizzo") + "," + localStorage.getItem("Civico")
