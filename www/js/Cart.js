@@ -82,7 +82,7 @@ function onDeviceReady() {
 				   
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+393478253732";
+			window.location.href = "tel:+393313870177";
 		});
 		
 		$(document).on("touchstart", "#recensione", function(e){
@@ -395,7 +395,7 @@ function AggProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://www.msop.it/demoapp/www/check_Prodotto.asp",
+		   url:"http://www.msop.it/artpizza/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -462,7 +462,7 @@ function agg2(prod){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/demoapp/www/check_Prodotto.asp",
+		   url:"http://msop.it/artpizza/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -510,7 +510,7 @@ function SottProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/demoapp/www/check_Prodotto.asp",
+		   url:"http://msop.it/artpizza/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -795,7 +795,7 @@ function compra(metodo) {
 					 $(".spinner").show();
 					 $.ajax({
 							type:"GET",
-							url:"http://msop.it/demoapp/www/Check_TransactionV2.asp",
+							url:"http://msop.it/artpizza/www/Check_TransactionV2.asp",
 							contentType: "application/json",
 							data: {email:email,id_prodotto:transazioneprodotto,qta:1,tot:amount,totPunti:amountPunti,transazionemia:transazioneprodotto,NomeProdotto:"Ordine App",EmailEsercente:"salvatore.bruni@gmail.com",idTransazione:metodopp,Ordine:ordinazione,Indirizzo:Indirizzo,Telefono:Telefono,OraConsegna:OraConsegna,Note:Note},
 							timeout: 7000,
@@ -965,7 +965,7 @@ function compraCarta() {
 					 $(".spinner").show();
 					 $.ajax({
 							type:"GET",
-							url:"http://msop.it/demoapp/www/Check_TransactionV2.asp",
+							url:"http://msop.it/artpizza/www/Check_TransactionV2.asp",
 							contentType: "application/json",
 							data: {email:email,id_prodotto:transazioneprodotto,qta:1,tot:amount,totPunti:amountPunti,transazionemia:transazioneprodotto,NomeProdotto:"Ordine App",EmailEsercente:"salvatore.bruni@gmail.com",idTransazione:"CC",Ordine:ordinazione,Indirizzo:Indirizzo,Telefono:Telefono,OraConsegna:OraConsegna,Note:Note},
 							timeout: 7000,
@@ -979,7 +979,7 @@ function compraCarta() {
 								   //localStorage.setItem("Punti", item.Punti);
 								   dlt2()
 								   
-								   var ref = window.open('http://msop.it/demoapp/wbspaypal.asp?Transprodotto='+ transazioneprodotto +'', '_blank', 'location=no');
+								   var ref = window.open('http://msop.it/artpizza/wbspaypal.asp?Transprodotto='+ transazioneprodotto +'', '_blank', 'location=no');
 								   
 								   ref.addEventListener('loadstop', function(event) { if (event.url.match("mobile/close")) { ref.close(); } });
 								   
@@ -1097,7 +1097,7 @@ function mostrapunti(){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/demoapp/www/check_login_punti.asp",
+			   url:"http://msop.it/artpizza/www/check_login_punti.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email")},
 			   timeout: 7000,
@@ -1153,7 +1153,7 @@ function mostraOrario(){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/demoapp/www/Check_Orario.asp",
+			   url:"http://msop.it/artpizza/www/Check_Orario.asp",
 			   contentType: "application/json",
 			   //data: {email:localStorage.getItem("email")},
 			   timeout: 7000,
@@ -1203,11 +1203,11 @@ function goprofilo(){
 }
 
 	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
 }
 
 function gomappa(){
-	var addressLongLat = '41.863862,12.497881';
+	var addressLongLat = '41.854282,12.567155';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

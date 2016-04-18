@@ -58,12 +58,12 @@ function onDeviceReady() {
 	$(".spinner").hide();
 }
 
-	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+function gofacebook(){
+	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
 }
 
 function gomappa(){
-	var addressLongLat = '41.863862,12.497881';
+	var addressLongLat = '41.854282,12.567155';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

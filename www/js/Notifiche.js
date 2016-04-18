@@ -85,7 +85,7 @@ function onDeviceReady() {
 	
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+393478253732";
+			window.location.href = "tel:+393313870177";
 		});
 		
 		$(document).on("touchstart", "#recensione", function(e){
@@ -185,7 +185,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/demoapp/www/check_MieNotifiche.asp",
+		   url:"http://msop.it/artpizza/www/check_MieNotifiche.asp",
 		   contentType: "application/json",
 		   data: {email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -514,11 +514,11 @@ function uscire(){
 }
 
 	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/StudioProfitsrl', '_system', 'location=no');
+	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
 }
 
 function gomappa(){
-	var addressLongLat = '41.863862,12.497881';
+	var addressLongLat = '41.854282,12.567155';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
