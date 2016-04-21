@@ -184,7 +184,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/artpizza/www/check_Mietransazioni.asp",
+		   url:"http://msop.it/zicatari/www/check_Mietransazioni.asp",
 		   contentType: "application/json",
 		   data: {email:localStorage.getItem("email")},
 		   timeout: 7000,

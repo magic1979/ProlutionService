@@ -329,7 +329,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/artpizza/www/check_PrendiRecensioni.asp",
+		   url:"http://msop.it/zicatari/www/check_PrendiRecensioni.asp",
 		   contentType: "application/json",
 		   //data: {ID: tech},
 		   timeout: 7000,
@@ -686,7 +686,7 @@ function scriviRec(rec,score){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/artpizza/www/check_ratingV2.asp",
+			   url:"http://msop.it/zicatari/www/check_ratingV2.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email"),Recensione:rec,Stelle:score},
 			   timeout: 7000,

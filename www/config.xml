@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-		id        = "it.app_piu.artpizza"
-		versionCode="2.0"
-		version   = "2.0">
-		<name>Art&amp;Pizza</name>
-		<description>Art&amp;pizza App+, Pizza, Pizza a legna</description>
+		id        = "it.app_piu.zicatari"
+		versionCode="1.0"
+		version   = "1.0">
+		<name>ZiCatari</name>
+		<description>Zi Catari App+, Pizza, Pizza a legna</description>
 		<author href="http://www.app-piu.it" email="info@app-piu.it">
 			Prolution srl
 		</author>
