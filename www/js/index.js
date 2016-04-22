@@ -26,10 +26,10 @@ var app = {
 		
 	
 		if(PushbotsPlugin.isiOS()){
-			PushbotsPlugin.initializeiOS("569cc754177959df038b4567");
+			PushbotsPlugin.initializeiOS("5719da5f4a9efa48a98b4567");
 		 }
 		 if(PushbotsPlugin.isAndroid()){
-			PushbotsPlugin.initializeAndroid("569cc754177959df038b4567", "979160788694");
+			PushbotsPlugin.initializeAndroid("5719da5f4a9efa48a98b4567", "424116735250");
 		 }
 					
 		 
