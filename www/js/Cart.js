@@ -80,6 +80,11 @@ function onDeviceReady() {
 			//initscroll()
 		});
 		
+				$(document).on("touchstart", "#faccialibro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gofacebook()
+		});
+		
 		
 	
 	$(document).on("touchstart", "#chisiamo", function(e){
@@ -1220,7 +1225,7 @@ function goprofilo(){
 }
 
 	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
+	var ref = window.open('https://www.facebook.com/zicatari', '_system', 'location=no');
 }
 
 function gomappa(){

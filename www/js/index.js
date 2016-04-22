@@ -645,7 +645,7 @@ function checkPos() {
 }
 
 	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
+	var ref = window.open('https://www.facebook.com/zicatari', '_system', 'location=no');
 }
 
 function gomappa(){
