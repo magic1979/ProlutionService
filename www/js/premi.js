@@ -55,7 +55,7 @@ function onDeviceReady() {
 		
 		$(document).on("touchstart", "#faccialibro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			gofacebook()
+			//gofacebook()
 		});
 		
 		$(document).on("touchstart", "#uscire", function(e){
@@ -70,7 +70,7 @@ function onDeviceReady() {
 		
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+393313870177";
+			window.location.href = "tel:+39065070098";
 		});
 		
 		$(document).on("touchstart", "#chisiamo", function(e){
@@ -205,7 +205,7 @@ function buildcatalogo() {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Home.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Home.asp",
 		   contentType: "application/json",
 		   data: {categoria:"Premi"},
 		   timeout: 7000,
@@ -219,7 +219,7 @@ function buildcatalogo() {
 					window.location.href = "cart.html";
 				  }
 				  else{
-				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/zicatari/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"Punti;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#' ><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#' onclick='#'><div width='28px' class='home'></div></a></td></tr></table>");
+				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/pizzasprint/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"Punti;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#' ><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#' onclick='#'><div width='28px' class='home'></div></a></td></tr></table>");
 				  }
 				  
 				  $(document).on("touchstart", "#add"+ item.Cod_Prodotto +"", function(e){
@@ -296,7 +296,7 @@ function AggProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Prodotto_Punti.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Prodotto_Punti.asp",
 		   contentType: "application/json",
 		   data: {id:prod,Punti:punteggio,Op:1,email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -399,7 +399,7 @@ function agg2(prod){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Prodotto_Punti.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Prodotto_Punti.asp",
 		   contentType: "application/json",
 		   data: {id:prod,Punti:punteggio,Op:1,email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -468,7 +468,7 @@ function SottProd(prod) {
 													  $(".spinner").show();
 													  $.ajax({
 															 type:"GET",
-															 url:"http://msop.it/zicatari/www/check_Prodotto_Punti.asp",
+															 url:"http://msop.it/pizzasprint/www/check_Prodotto_Punti.asp",
 															 contentType: "application/json",
 															 data: {id:prod,Punti:punteggio,Op:2,email:localStorage.getItem("email")},
 															 timeout: 7000,
@@ -524,7 +524,7 @@ function SottProd(prod) {
 													  $(".spinner").show();
 													  $.ajax({
 															 type:"GET",
-															 url:"http://msop.it/zicatari/www/check_Prodotto_Punti.asp",
+															 url:"http://msop.it/pizzasprint/www/check_Prodotto_Punti.asp",
 															 contentType: "application/json",
 															 data: {id:prod,Punti:punteggio,Op:2,email:localStorage.getItem("email")},
 															 timeout: 7000,
@@ -758,8 +758,8 @@ function gofacebook(){
 	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
 }
 
-function gomappa(){
-	var addressLongLat = '41.854282,12.567155';
+	function gomappa(){
+	var addressLongLat = '41.785096,12.440686';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

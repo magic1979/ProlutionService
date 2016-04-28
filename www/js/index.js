@@ -26,10 +26,10 @@ var app = {
 		
 	
 		if(PushbotsPlugin.isiOS()){
-			PushbotsPlugin.initializeiOS("5719da5f4a9efa48a98b4567");
+			PushbotsPlugin.initializeiOS("5721c9be4a9efa2b4e8b4567");
 		 }
 		 if(PushbotsPlugin.isAndroid()){
-			PushbotsPlugin.initializeAndroid("5719da5f4a9efa48a98b4567", "424116735250");
+			PushbotsPlugin.initializeAndroid("5721c9be4a9efa2b4e8b4567", "510019194563");
 		 }
 					
 		 
@@ -85,7 +85,7 @@ var app = {
 		
 		$(document).on("touchstart", "#faccialibro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			gofacebook()
+			//gofacebook()
 		});
 		
 		$(document).on("touchstart", "#uscire", function(e){
@@ -100,7 +100,7 @@ var app = {
 		
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+393313870177";
+			window.location.href = "tel:+39065070098";
 		});
 		
 		$(document).on("touchstart", "#chisiamo", function(e){
@@ -645,11 +645,11 @@ function checkPos() {
 }
 
 	function gofacebook(){
-	var ref = window.open('https://www.facebook.com/zicatari', '_system', 'location=no');
+	var ref = window.open('https://www.facebook.com/pizzasprint', '_system', 'location=no');
 }
 
-function gomappa(){
-	var addressLongLat = '41.854282,12.567155';
+	function gomappa(){
+	var addressLongLat = '41.785096,12.440686';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
@@ -798,7 +798,7 @@ function buildprodotto(Categoria,Provincia,Pagina) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/Check_Home.asp",
+		   url:"http://msop.it/pizzasprint/www/Check_Home.asp",
 		   contentType: "application/json",
 		   //data: {Categoria:Categoria,Provincia:Provincia,Pagina:Pagina},
 		   data: {Categoria:"offerte"},
@@ -817,9 +817,9 @@ function buildprodotto(Categoria,Provincia,Pagina) {
 					landmark2 = landmark2 + "<a style='text-decoration: none;' href='#page2' onclick='javascript:pagina22("+ item.Cod_Prodotto +");' id='linkdettagli' ><img src='http://www.mistertod.it/public/up/"+ item.IMG +".png' width='700px' height='400px' class='arrotondamento'><table height='30px' border='0' width='90%'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='50%'><font size='2' color='#454545'>"+ item.Nome +"</font></td><td align='right'><font size='2' color='#454545'>"+ item.Citta +"</font></font></td></tr><tr><td align='left' width='50%'><font size='2' color='#454545'>Distanza:Km "+ distanza +" </font></td><td align='right'><font size='4' color='#B40431'>"+ item.Indirizzo +"</font></td></tr></table></a><br><hr class='div3'>";
 				  }
 				  else{
-					$("#classifica").append("<div id="+ item.Cod_Prodotto +"'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><img src='http://msop.it/public/zicatari/"+ item.IMG +".png' width='100%'></a><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'></div>");
+					$("#classifica").append("<div id="+ item.Cod_Prodotto +"'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><img src='http://msop.it/public/pizzasprint/"+ item.IMG +".png' width='100%'></a><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'></div>");
 					
-					 //$("#classifica").append("<div class='container'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><div class='tag'><img src='img/info.png' width='50px'></div></a><img src='http://msop.it/public/zicatari/"+ item.IMG +".png' width='100%'></div><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'>");
+					 //$("#classifica").append("<div class='container'><a id='prod"+ item.Cod_Prodotto +"' style='text-decoration: none;' href='#' rel='external' onclick='#' data-transition='slide' id='linkdettagli"+ item.Cod_Prodotto +"'><div class='tag'><img src='img/info.png' width='50px'></div></a><img src='http://msop.it/public/pizzasprint/"+ item.IMG +".png' width='100%'></div><table height='30px' border='0' width='320px'><tr><td align='left' colspan='2'><font size='3' color='#454545'>"+ item.Descrizione +"</font></td></tr><tr><td align='left' width='160px'><br><font size='2' color='#454545'>Acquistati:</font><font size='2' color='#B40431'> "+ item.Acquistati +"</font></td><td align='right'><br><font size='2' color='#B40431'>Vale:<strike>"+ item.Valore +"&euro;</strike> "+ item.Sconto +"%</font></font></td></tr><tr><td align='left' width='160px' valign='center'><font size='2' color='#454545'>Scade tra: </font><font size='2' color='#B40431'>"+ item.GiorniRimanenti +" </font><font size='2' color='#454545'>giorni</font></td><td id='deallo"+ item.Cod_Prodotto +"' colspan='2' align='right'><font size='5' color='#B40431'>"+ item.Deal +"&euro;</font></td></tr><tr id='vis2"+ item.Cod_Prodotto +"' style='display:none' class='visione'><td align='left' colspan='2'><font size='1' color='#454545' class='someclass'>"+ item.Dettagli +"</font></td></tr></table><br><hr class='div3'>");
 				  }
 				  
 				  $(document).on("tap", "#prod"+ item.Cod_Prodotto +"", function(e){
@@ -1186,7 +1186,7 @@ function RegToken(){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/zicatari/www/Check_RegToken.asp",
+			   url:"http://msop.it/pizzasprint/www/Check_RegToken.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email"),token:localStorage.getItem("Token"),platform:"Android"},
 			   timeout: 7000,

@@ -173,7 +173,7 @@ function buildcatalogo(Catalogo) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Home.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Home.asp",
 		   contentType: "application/json",
 		   data: {categoria:Catalogo},
 		   timeout: 7000,
@@ -187,9 +187,9 @@ function buildcatalogo(Catalogo) {
 					window.location.href = "menu.html";
 				  }
 				  else{
-				  //tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/zicatari/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='javascript:AggProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='javascript:SottProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home'></div></a></td></tr>";
+				  //tabella = tabella + "<tr><td align='center' width='150px'><img src='http://msop.it/public/pizzasprint/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='javascript:AggProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='javascript:SottProd("+ item.Cod_Prodotto +")' onclick='#'><div width='28px' class='home'></div></a></td></tr>";
 				  
-				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/zicatari/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home'><input type='hidden' id='"+ item.Cod_Prodotto +"' name='"+ item.Cod_Prodotto +"' value='"+ item.Cod_Prodotto +"'></div></a></td></tr></table>");
+				  $("#CatalogoPag").append("<table align='center' border='0' width='320px' height='90px'><tr><td align='center' width='150px'><img src='http://msop.it/public/pizzasprint/"+ item.IMG +".png' width='140px' height='140px' class='circolare'></td><td align='left' width='100px'><table align='center' border='0' width='100px'><tr><td align='left'><font color='red' size='3'>"+ item.Nome +", "+ Number(item.Deal).toFixed(2) +"&euro;</font></td></tr><tr><td align='left'>"+ item.Descrizione +"</td></tr></table></td><td align='left'><a id='add"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home1'></div></a><br><a id='meno"+ item.Cod_Prodotto +"' href='#'><div width='28px' class='home'><input type='hidden' id='"+ item.Cod_Prodotto +"' name='"+ item.Cod_Prodotto +"' value='"+ item.Cod_Prodotto +"'></div></a></td></tr></table>");
 				  }
 				  
 				  $(document).on("touchstart", "#add"+ item.Cod_Prodotto +"", function(e){
@@ -250,7 +250,7 @@ function catalogotouch(Catalogo) {
 	/*$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Home.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Home.asp",
 		   contentType: "application/json",
 		   data: {categoria:Catalogo},
 		   timeout: 7000,
@@ -339,7 +339,7 @@ function AggProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Prodotto.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -421,7 +421,7 @@ function agg2(prod){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Prodotto.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -474,7 +474,7 @@ function SottProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/zicatari/www/check_Prodotto.asp",
+		   url:"http://msop.it/pizzasprint/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -722,7 +722,7 @@ function getParameterByName(name) {
 
 						  
 	function gofacebook(){
-	var ref = window.open('https://www.facebook.com/zicatari', '_system', 'location=no');
+	var ref = window.open('https://www.facebook.com/pizzasprint', '_system', 'location=no');
 }
 
 function gomappa(){

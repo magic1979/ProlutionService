@@ -62,8 +62,8 @@ function gofacebook(){
 	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
 }
 
-function gomappa(){
-	var addressLongLat = '41.854282,12.567155';
+	function gomappa(){
+	var addressLongLat = '41.785096,12.440686';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
