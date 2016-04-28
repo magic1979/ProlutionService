@@ -331,7 +331,7 @@ function seleziona() {
 		   type:"GET",
 		   url:"http://msop.it/pizzasprint/www/check_PrendiRecensioni.asp",
 		   contentType: "application/json",
-		   //data: {ID: tech},
+		   data: {email: localStorage.getItem("email")},
 		   timeout: 7000,
 		   jsonp: 'callback',
 		   crossDomain: true,
