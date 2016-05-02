@@ -90,7 +90,7 @@ function onDeviceReady() {
 		
 		$(document).on("touchstart", "#faccialibro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			//gofacebook()
+			gofacebook()
 		});
 		
 		$(document).on("touchstart", "#star1", function(e){

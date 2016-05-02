@@ -92,6 +92,11 @@ function onDeviceReady() {
 			window.location.href = "rating.html";
 			//initscroll()
 		});
+		
+				$(document).on("touchstart", "#faccialibro", function(e){
+			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
+			gofacebook()
+		});
     
     $.mobile.defaultPageTransition = 'none';
     $.mobile.defaultDialogTransition = 'none';

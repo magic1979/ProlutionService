@@ -82,7 +82,7 @@ function onDeviceReady() {
 		
 				$(document).on("touchstart", "#faccialibro", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			//gofacebook()
+			gofacebook()
 		});
 		
 		
@@ -1116,45 +1116,6 @@ function mostrapunti(){
 		tblProfile = "<tr><td><a href='#' id='entrare' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-check ui-btn-icon-left' data-theme='b'>Login</a></td></tr>"
 	}else{
 		
-		$(".spinner").show();
-		$.ajax({
-			   type:"GET",
-			   url:"http://msop.it/meidinsud/www/check_login_punti.asp",
-			   contentType: "application/json",
-			   data: {email:localStorage.getItem("email")},
-			   timeout: 7000,
-			   jsonp: 'callback',
-			   crossDomain: true,
-			   success:function(result){
-			   
-			   $.each(result, function(i,item){
-					  //alert(item.Token);
-					  
-					  if (item.Token == 1024){
-
-						localStorage.setItem("Punti", Number(item.Punti).toFixed(2));
-
-					  }
-					 
-				});
-			   
-			   $(".spinner").hide();
-		
-			   },
-			   error: function(){
-			   $(".spinner").hide();
-	
-			   navigator.notification.alert(
-								 'Possibile errore di rete, riprova tra qualche minuto',  // message
-								 alertDismissed,         // callback
-								 'Attenzione',            // title
-								 'Done'                  // buttonName
-				);
-	
-			   },
-			   dataType:"jsonp"});
-
-
 		tblProfile = "<tr><td>SALDO PUNTI: "+ Number(localStorage.getItem("Punti")).toFixed(2) +"</td></tr><tr><td><a href='#' id='uscire' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left' data-theme='b'>Logout</a></td></tr>"
 		
 		document.getElementById("NomeRegalo").value = localStorage.getItem("Nome") + " " + localStorage.getItem("Cognome")
