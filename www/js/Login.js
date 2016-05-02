@@ -156,7 +156,7 @@ function LoginVera(email,pin){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/pizzasprint/www/check_login.asp",
+		   url:"http://msop.it/meidinsud/www/check_login.asp",
 		   contentType: "application/json",
 		   data: {email:email,pin:pin},
 		   timeout: 7000,
@@ -351,7 +351,7 @@ function iscriviti(){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/pizzasprint/www/Check_Reg.asp",
+		   url:"http://msop.it/meidinsud/www/Check_Reg.asp",
 		   contentType: "application/json",
 		   data: {email:emailreg,nome:nomereg,cognome:cognome,indirizzo:indirizzo,cap:cap,civico:civico,telefono:telefono,citta:citta,pin:pinreg,platform:"Ios"},
 		   timeout: 7000,
@@ -477,7 +477,7 @@ function onPrompt(results) {
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/pizzasprint/www/Check_RecPassword.asp",
+			   url:"http://msop.it/meidinsud/www/Check_RecPassword.asp",
 			   contentType: "application/json",
 			   data: {email:results.input1},
 			   timeout: 7000,
@@ -528,12 +528,12 @@ function onPrompt(results) {
 	
 }
 
-	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
+		function gofacebook(){
+	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
 }
 
-function gomappa(){
-	var addressLongLat = '41.854282,12.567155';
+	function gomappa(){
+	var addressLongLat = '41.816711,12.445357';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

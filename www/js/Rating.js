@@ -84,7 +84,7 @@ function onDeviceReady() {
 	
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+065070098";
+			window.location.href = "tel:+0652201274";
 		});
 		
 		
@@ -329,7 +329,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/pizzasprint/www/check_PrendiRecensioni.asp",
+		   url:"http://msop.it/meidinsud/www/check_PrendiRecensioni.asp",
 		   contentType: "application/json",
 		   data: {email: localStorage.getItem("email")},
 		   timeout: 7000,
@@ -686,7 +686,7 @@ function scriviRec(rec,score){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/pizzasprint/www/check_ratingV2.asp",
+			   url:"http://msop.it/meidinsud/www/check_ratingV2.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email"),Recensione:rec,Stelle:score},
 			   timeout: 7000,
@@ -728,12 +728,12 @@ function scriviRec(rec,score){
 	
 }
 
-	function gofacebook(){
-	var ref = window.open('https://www.facebook.com/pizzasprint', '_system', 'location=no');
+		function gofacebook(){
+	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
 }
 
-function gomappa(){
-	var addressLongLat = '41.785096,12.440686';
+	function gomappa(){
+	var addressLongLat = '41.816711,12.445357';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

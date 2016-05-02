@@ -84,7 +84,7 @@ function onDeviceReady() {
 				   
      	$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+39065070098";
+			window.location.href = "tel:+0652201274";
 		});
 		
 				$(document).on("touchstart", "#recensione", function(e){
@@ -184,7 +184,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/pizzasprint/www/check_Mietransazioni.asp",
+		   url:"http://msop.it/meidinsud/www/check_Mietransazioni.asp",
 		   contentType: "application/json",
 		   data: {email:localStorage.getItem("email")},
 		   timeout: 7000,
@@ -512,12 +512,12 @@ function uscire(){
 	window.location.href = "index.html";
 }
 
-	function gofacebook(){
-	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
+		function gofacebook(){
+	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
 }
 
 	function gomappa(){
-	var addressLongLat = '41.785096,12.440686';
+	var addressLongLat = '41.816711,12.445357';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat

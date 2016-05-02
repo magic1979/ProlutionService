@@ -58,12 +58,12 @@ function onDeviceReady() {
 	$(".spinner").hide();
 }
 
-function gofacebook(){
-	var ref = window.open('https://m.facebook.com/artepizzaroma/?fref=ts', '_system', 'location=no');
+		function gofacebook(){
+	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
 }
 
 	function gomappa(){
-	var addressLongLat = '41.785096,12.440686';
+	var addressLongLat = '41.816711,12.445357';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
