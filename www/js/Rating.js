@@ -329,7 +329,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/meidinsud/www/check_PrendiRecensioni.asp",
+		   url:"http://msop.it/fratelli/www/check_PrendiRecensioni.asp",
 		   contentType: "application/json",
 		   data: {email: localStorage.getItem("email")},
 		   timeout: 7000,
@@ -686,7 +686,7 @@ function scriviRec(rec,score){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/meidinsud/www/check_ratingV2.asp",
+			   url:"http://msop.it/fratelli/www/check_ratingV2.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email"),Recensione:rec,Stelle:score},
 			   timeout: 7000,
@@ -729,7 +729,7 @@ function scriviRec(rec,score){
 }
 
 		function gofacebook(){
-	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
+	var ref = window.open('https://www.facebook.com/fratelli/timeline', '_system', 'location=no');
 }
 
 	function gomappa(){

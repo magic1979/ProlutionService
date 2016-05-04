@@ -10,7 +10,7 @@ function onDeviceReady() {
 			//initscroll()
 		});
 		
-		$(document).on("touchstart", "#badde3", function(e){
+		$(document).on("touchstart", "#badde4", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 			window.location.href = "cart.html";
 			//initscroll()
@@ -74,18 +74,6 @@ function onDeviceReady() {
 			compraConsegna(2);
 			//initscroll()
 		});
-		
-		$(document).on("touchstart", "#cartacc", function(e){
-			compraCC();
-			//initscroll()
-		});
-		
-				$(document).on("touchstart", "#faccialibro", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			gofacebook()
-		});
-		
-		
 	
 	$(document).on("touchstart", "#chisiamo", function(e){
 				   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
@@ -94,7 +82,7 @@ function onDeviceReady() {
 				   
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+0652201274";
+			window.location.href = "tel:+393478253732";
 		});
 		
 		$(document).on("touchstart", "#recensione", function(e){
@@ -102,16 +90,6 @@ function onDeviceReady() {
 			window.location.href = "rating.html";
 			//initscroll()
 		});
-		
-		$(document).on("touchstart", "#uscire", function(e){
-			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			uscire()
-		});
-		
-		$(document).on("touchstart", "#entrare", function(e){
-					   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-					   saldopunti()
-		})
 		
 	
 	
@@ -417,7 +395,7 @@ function AggProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://www.msop.it/meidinsud/www/check_Prodotto.asp",
+		   url:"http://www.msop.it/fratelli/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -484,7 +462,7 @@ function agg2(prod){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/meidinsud/www/check_Prodotto.asp",
+		   url:"http://msop.it/fratelli/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -532,7 +510,7 @@ function SottProd(prod) {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/meidinsud/www/check_Prodotto.asp",
+		   url:"http://msop.it/fratelli/www/check_Prodotto.asp",
 		   contentType: "application/json",
 		   data: {id:prod},
 		   timeout: 7000,
@@ -817,7 +795,7 @@ function compra(metodo) {
 					 $(".spinner").show();
 					 $.ajax({
 							type:"GET",
-							url:"http://msop.it/meidinsud/www/Check_TransactionV2.asp",
+							url:"http://msop.it/fratelli/www/Check_TransactionV2.asp",
 							contentType: "application/json",
 							data: {email:email,id_prodotto:transazioneprodotto,qta:1,tot:amount,totPunti:amountPunti,transazionemia:transazioneprodotto,NomeProdotto:"Ordine App",EmailEsercente:"salvatore.bruni@gmail.com",idTransazione:metodopp,Ordine:ordinazione,Indirizzo:Indirizzo,Telefono:Telefono,OraConsegna:OraConsegna,Note:Note},
 							timeout: 7000,
@@ -987,7 +965,7 @@ function compraCarta() {
 					 $(".spinner").show();
 					 $.ajax({
 							type:"GET",
-							url:"http://msop.it/meidinsud/www/Check_TransactionV2.asp",
+							url:"http://msop.it/fratelli/www/Check_TransactionV2.asp",
 							contentType: "application/json",
 							data: {email:email,id_prodotto:transazioneprodotto,qta:1,tot:amount,totPunti:amountPunti,transazionemia:transazioneprodotto,NomeProdotto:"Ordine App",EmailEsercente:"salvatore.bruni@gmail.com",idTransazione:"CC",Ordine:ordinazione,Indirizzo:Indirizzo,Telefono:Telefono,OraConsegna:OraConsegna,Note:Note},
 							timeout: 7000,
@@ -1001,7 +979,7 @@ function compraCarta() {
 								   //localStorage.setItem("Punti", item.Punti);
 								   dlt2()
 								   
-								   var ref = window.open('http://msop.it/meidinsud/wbspaypal.asp?Transprodotto='+ transazioneprodotto +'', '_blank', 'location=no');
+								   var ref = window.open('http://msop.it/fratelli/wbspaypal.asp?Transprodotto='+ transazioneprodotto +'', '_blank', 'location=no');
 								   
 								   ref.addEventListener('loadstop', function(event) { if (event.url.match("mobile/close")) { ref.close(); } });
 								   
@@ -1113,10 +1091,10 @@ function mostrapunti(){
 	var tblProfile;
 	
 	if((loggato=="")||(!loggato)){
-		tblProfile = "<tr><td><a href='#' id='entrare' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-check ui-btn-icon-left' data-theme='b'>Login</a></td></tr>"
+		tblProfile = "<tr><td><a href='javascript:saldopunti()' id='#' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-check ui-btn-icon-left' data-theme='b'>Login</a></td></tr>"
 	}else{
 		
-		tblProfile = "<tr><td>SALDO PUNTI: "+ Number(localStorage.getItem("Punti")).toFixed(2) +"</td></tr><tr><td><a href='#' id='uscire' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left' data-theme='b'>Logout</a></td></tr>"
+		tblProfile = "<tr><td>SALDO PUNTI: "+ Number(localStorage.getItem("Punti")).toFixed(2) +"</td></tr><tr><td><a href='javascript:uscire()' id='#' data-role='button' class='ui-btn ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left' data-theme='b'>Logout</a></td></tr>"
 		
 		document.getElementById("NomeRegalo").value = localStorage.getItem("Nome") + " " + localStorage.getItem("Cognome")
 		document.getElementById("Indirizzo").value = localStorage.getItem("Indirizzo") + "," + localStorage.getItem("Civico")
@@ -1136,7 +1114,7 @@ function mostraOrario(){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/meidinsud/www/Check_Orario.asp",
+			   url:"http://msop.it/fratelli/www/Check_Orario.asp",
 			   contentType: "application/json",
 			   //data: {email:localStorage.getItem("email")},
 			   timeout: 7000,
@@ -1185,19 +1163,18 @@ function goprofilo(){
 	}
 }
 
-		function gofacebook(){
-	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
-}
-
-	function gomappa(){
-	var addressLongLat = '41.816711,12.445357';
+function gomappa(){
+	var addressLongLat = '41.777861,12.355745';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
 	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
 	
-	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
-	
+	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system')
+}
+
+function gofacebook(){
+	var ref = window.open('https://m.facebook.com/fratelli-1396958183922266', '_system', 'location=no');
 }
 
 function riparti(){

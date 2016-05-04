@@ -58,12 +58,8 @@ function onDeviceReady() {
 	$(".spinner").hide();
 }
 
-		function gofacebook(){
-	var ref = window.open('https://www.facebook.com/meidinsud/timeline', '_system', 'location=no');
-}
-
-	function gomappa(){
-	var addressLongLat = '41.816711,12.445357';
+function gomappa(){
+	var addressLongLat = '41.830227,12.577421';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
