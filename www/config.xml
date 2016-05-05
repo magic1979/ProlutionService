@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-		id        = "it.app-piu.fratelli"
-		versionCode="4.0"
-		version   = "4.0">
-		<name>FratelliApp+</name>
-		<description>Fratelli di Pizza App+, Pizza, Pizza a legna</description>
+		id        = "it.app-piu.pizzaelite"
+		versionCode="3.0"
+		version   = "3.0">
+		<name>Pizza Elite</name>
+		<description>Pizza Elite App+, Pizza, Pizza a legna</description>
 		<author href="http://www.app-piu.it" email="info@app-piu.it">
-			Prolution srl
+Prolution srl
 		</author>
-		<preference name="phonegap-version" value="cli-6.0.0" />
+		<preference name="phonegap-version" value="cli-5.2.0" />
 		<preference name="orientation" value="portrait" />
 		<preference name="fullscreen" value="false" />
 		<preference name="target-device" value="universal" />
@@ -29,8 +29,8 @@
 		<preference name="KeyboardDisplayRequiresUserAction" value="true" />
 		<preference name="HideKeyboardFormAccessoryBar" value="true" />
 		<preference name="SuppressesIncrementalRendering" value="true" />
-		<preference name="android-minSdkVersion" value="14" />
-		<preference name="android-targetSdkVersion" value="21" />
+		<preference name="android-minSdkVersion" value="11" />
+		<preference name="android-targetSdkVersion" value="11" />
 		<preference name="android-installLocation" value="auto" />
 		<preference name="SplashScreenDelay" value="10000" />
 		<preference name="ErrorUrl" value="http://www.app-piu.it"/>
@@ -110,5 +110,4 @@
 
 		<gap:plugin name="de.appplant.cordova.plugin.email-composer" spec="0.8.2" source="pgb" />
 		<gap:plugin name="pushbots-cordova-plugin" source="npm" version="1.2.8" />
-		<plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
 	</widget>

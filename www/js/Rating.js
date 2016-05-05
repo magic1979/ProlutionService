@@ -84,7 +84,7 @@ function onDeviceReady() {
 	
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+0652201274";
+			window.location.href = "tel:+393802119068";
 		});
 		
 		
@@ -329,7 +329,7 @@ function seleziona() {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/fratelli/www/check_PrendiRecensioni.asp",
+		   url:"http://msop.it/pizzaelite/www/check_PrendiRecensioni.asp",
 		   contentType: "application/json",
 		   data: {email: localStorage.getItem("email")},
 		   timeout: 7000,
@@ -686,7 +686,7 @@ function scriviRec(rec,score){
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/fratelli/www/check_ratingV2.asp",
+			   url:"http://msop.it/pizzaelite/www/check_ratingV2.asp",
 			   contentType: "application/json",
 			   data: {email:localStorage.getItem("email"),Recensione:rec,Stelle:score},
 			   timeout: 7000,
@@ -728,19 +728,14 @@ function scriviRec(rec,score){
 	
 }
 
-		function gofacebook(){
-	var ref = window.open('https://www.facebook.com/fratelli/timeline', '_system', 'location=no');
-}
-
-	function gomappa(){
-	var addressLongLat = '41.816711,12.445357';
+function gomappa(){
+	var addressLongLat = '41.811582, 12.442959';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
-	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
-	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
-	
-	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
-	
+}
+
+function gofacebook(){
+	var ref = window.open('https://m.facebook.com/Pizza-Elite-635675969879673/', '_system', 'location=no');
 }
 
 
