@@ -156,7 +156,7 @@ function LoginVera(email,pin){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/pizzaelite/www/check_login.asp",
+		   url:"http://msop.it/altradonna/www/check_login.asp",
 		   contentType: "application/json",
 		   data: {email:email,pin:pin},
 		   timeout: 7000,
@@ -351,7 +351,7 @@ function iscriviti(){
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/pizzaelite/www/Check_Reg.asp",
+		   url:"http://msop.it/altradonna/www/Check_Reg.asp",
 		   contentType: "application/json",
 		   data: {email:emailreg,nome:nomereg,cognome:cognome,indirizzo:indirizzo,cap:cap,civico:civico,telefono:telefono,citta:citta,pin:pinreg,platform:"Ios"},
 		   timeout: 7000,
@@ -477,7 +477,7 @@ function onPrompt(results) {
 		$(".spinner").show();
 		$.ajax({
 			   type:"GET",
-			   url:"http://msop.it/pizzaelite/www/Check_RecPassword.asp",
+			   url:"http://msop.it/altradonna/www/Check_RecPassword.asp",
 			   contentType: "application/json",
 			   data: {email:results.input1},
 			   timeout: 7000,

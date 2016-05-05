@@ -94,7 +94,7 @@ function onDeviceReady() {
 				   
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+393802119068";
+			window.location.href = "tel:+393283140759";
 		});
 		
 		$(document).on("touchstart", "#recensione", function(e){
@@ -112,6 +112,11 @@ function onDeviceReady() {
 					   //$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
 					   saldopunti()
 		})
+		
+		$(document).on("touchstart", "#mostracalendario", function(e){
+			mostracal();
+			//initscroll()
+		});
 		
 	
 	
@@ -1185,14 +1190,19 @@ function goprofilo(){
 	}
 }
 
-				function gomappa(){
-	var addressLongLat = '41.811582, 12.442959';
+function gomappa(){
+	var addressLongLat = '41.830227,12.577421';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
+	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
+	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
+	
+	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
+	
 }
 
 function gofacebook(){
-	var ref = window.open('https://m.facebook.com/Pizza-Elite-635675969879673/', '_system', 'location=no');
+	var ref = window.open('https://m.facebook.com/laltra.donna.35', '_system', 'location=no');
 }
 
 function riparti(){
