@@ -68,7 +68,7 @@ function onDeviceReady() {
 	
 		$(document).on("touchstart", "#tel", function(e){
 			//$.mobile.changePage( "#page", { transition: "slide", changeHash: false, reverse: true });
-			window.location.href = "tel:+393283140759";
+			window.location.href = "tel:+393478253732";
 		});
 		
 						$(document).on("touchstart", "#recensione", function(e){
@@ -164,7 +164,7 @@ function buildmenu() {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/altradonna/www/check_Menu.asp",
+		   url:"http://msop.it/fratelli/www/check_Menu.asp",
 		   contentType: "application/json",
 		   //data: {ID:idProdotto},
 		   timeout: 7000,
@@ -175,9 +175,9 @@ function buildmenu() {
 		   $.each(result, function(i,item){
 				  //alert(item.Catalogo)
 				  
-				  //tabella = tabella + "<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a id='conta"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='http://msop.it/public/altradonna/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a id='conta1"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a id='conta2"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>";
+				  //tabella = tabella + "<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a id='conta"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a id='conta1"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a id='conta2"+ item.Catalogo +"' href='catalogo.html?catalogo="+ item.Catalogo +"' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>";
 				  
-				   $("#menuL").append("<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a id='conta"+ item.ID +"' href='#' rel='external'><img src='http://msop.it/public/altradonna/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a id='conta2"+ item.ID +"' href='#' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a id='conta3"+ item.ID +"' href='#' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>");
+				   $("#menuL").append("<table width='100%' height='100px' class='tabella1'><tr><td><table bgcolor='#fff' width='100%' border='0'><tr><td width='30%'><a id='conta"+ item.ID +"' href='#' rel='external'><img src='http://msop.it/public/fratelli/"+ item.IMG +".png' width='100' class='circolare2'></a></td><td width='60%'><a id='conta2"+ item.ID +"' href='#' rel='external'><h2 class='visione'>&nbsp;"+ item.Catalogo +"</h2><p class='visione'>"+ item.Descrizione +"</p></a></td><td align='right'><a id='conta3"+ item.ID +"' href='#' rel='external'><img src='img/arrowD.png' width='40'></a></td></tr></table></td></tr></table><br>");
 				  
 				  $(document).on("tap", "#conta"+ item.ID +"", function(e){
 					window.location.href = "catalogo.html?catalogo="+ item.Catalogo +"";
@@ -228,7 +228,7 @@ function buildtouch() {
 	$(".spinner").show();
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/altradonna/www/check_Menu.asp",
+		   url:"http://msop.it/fratelli/www/check_Menu.asp",
 		   contentType: "application/json",
 		   //data: {ID:idProdotto},
 		   timeout: 7000,
@@ -632,18 +632,17 @@ function goprofilo(){
 }
 
 function gomappa(){
-	var addressLongLat = '41.830227,12.577421';
+	var addressLongLat = '41.777861,12.355745';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
 	//window.location.href = "http://maps.apple.com/?q="+addressLongLat
 	//window.open("http://maps.google.com/?q="+addressLongLat, '_system');
 	
-	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
-	
+	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system')
 }
 
 function gofacebook(){
-	var ref = window.open('https://m.facebook.com/laltra.donna.35', '_system', 'location=no');
+	var ref = window.open('https://m.facebook.com/fratelli-1396958183922266', '_system', 'location=no');
 }
 
 function riparti(){

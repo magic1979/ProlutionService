@@ -58,7 +58,7 @@ function onDeviceReady() {
 	$(".spinner").hide();
 }
 
-				function gomappa(){
+function gomappa(){
 	var addressLongLat = '41.830227,12.577421';
 	
 	window.open("http://maps.apple.com/?q="+addressLongLat, '_blank');
@@ -67,8 +67,4 @@ function onDeviceReady() {
 	
 	//var ref = window.open('http://maps.apple.com/?q=Via di Acilia, 7', '_system');
 	
-}
-
-function gofacebook(){
-	var ref = window.open('https://m.facebook.com/laltra.donna.35', '_system', 'location=no');
 }
