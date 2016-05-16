@@ -729,7 +729,7 @@ function scriviRec(rec,score){
 }
 
 		function gofacebook(){
-	var ref = window.open('https://www.facebook.com/fratelli/timeline', '_system', 'location=no');
+	var ref = window.open('https://m.facebook.com/fratellidipizzaacilia', '_system', 'location=no');
 }
 
 	function gomappa(){

@@ -656,7 +656,7 @@ function gomappa(){
 }
 
 function gofacebook(){
-	var ref = window.open('https://m.facebook.com/fratelli-1396958183922266', '_system', 'location=no');
+	var ref = window.open('https://m.facebook.com/fratellidipizzaacilia', '_system', 'location=no');
 }
 
 
